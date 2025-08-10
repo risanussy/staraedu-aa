@@ -1,0 +1,50 @@
+.about-bg-1-tanz{
+	background-color: #f2e9db;
+    padding-bottom: 80px;
+}
+.about-center-bg-tanz {
+    background-image: linear-gradient(rgba(238, 226, 215, 1), rgba(238, 226, 215, 1)) !important;
+    background-position: left top !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+}
+.about-bg-2-tanz {
+    background-image: linear-gradient(rgba(252, 246, 237, 1), rgba(252, 246, 237, 1)) !important;
+    background-position: left top !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.about-bg-4-tanz{
+    background-image: linear-gradient(rgba(229, 238, 235, 1), rgba(229, 238, 235, 1)) !important;
+    background-position: left top !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+.about-bg-5-tanz{
+	background-image: linear-gradient(rgba(252, 246, 237, 1), rgba(252, 246, 237, 1)) !important;
+    background-position: left top !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+.approach-bg-tanz{
+    background-image: linear-gradient(rgb(239 193 169), rgba(239, 193, 169, 1)) !important;
+    background-position: left top !important;
+    background-size: auto !important;
+    background-repeat: no-repeat !important;
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+.icon-text::before {
+  content: '\2192';
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900; /* Bold icons */
+  margin-right: 8px;
+}

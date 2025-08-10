@@ -1,0 +1,563 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>AD ASTRA – Coding School for Future Tech Leaders</title>
+  <meta name="robots" content="" />
+  <meta name="description" content="AD ASTRA is a future-oriented coding & innovation academy for ages 4–18: hands-on coding, AI, robotics, product creation, and entrepreneurship." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- CSS ONLY via <style> (Bootstrap from CDN using @import) -->
+  <style>
+    /* Import Bootstrap 5 (CSS only) */
+    @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
+
+    /* ==== GLOBAL BLACK & WHITE ONLY ==== */
+    html{ scroll-behavior:smooth }
+    body{ background:#000; color:#fff; }
+    a, a:hover, a:focus{ color:#fff; text-decoration:none }
+    .text-white { color:#fff !important; }
+    .text-muted { color:#fff !important; } /* Paksa semua teks putih */
+    .bg-black { background:#000 !important; }
+    .bg-dark-900 { background:#0b0b0b !important; } /* alternatif gelap */
+    .border-light-15 { border-color:rgba(255,255,255,.15) !important; }
+    .rounded-2xl{ border-radius:1.25rem; }
+    .lead{ font-size:1.125rem }
+    .logo-dark{ height:90px !important; }
+
+    /* Header fix when sticky (optional) */
+    .header-sticky{ position:sticky; top:0; z-index:1000; border-bottom:1px solid rgba(255,255,255,.08) }
+
+    /* Kartu kaca gelap tipis */
+    .glass-dark{
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:16px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Hero video circle */
+    .thumbvid { width: 480px; height:480px; border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,.12) }
+    @media (max-width: 576px){
+      .thumbvid{ width: 320px; height: 320px }
+      .logo-dark{ display:flex; justify-self:center }
+      .logo{ width:100% !important }
+    }
+
+    /* List simple dots */
+    .bullet li{ margin-bottom:.5rem }
+
+    /* Table (hitam & putih) */
+    .ck-table{ width:100%; border-collapse:separate; border-spacing:0; overflow:hidden; border-radius:10px; background:#000; color:#fff; box-shadow:0 8px 24px rgba(0,0,0,.6) }
+    .ck-table thead th{ background:#0b0b0b; color:#fff; text-transform:uppercase; letter-spacing:.02em; font-weight:700; padding:12px 14px; border-right:1px solid rgba(255,255,255,.12) }
+    .ck-table tbody td{ padding:12px 14px; border-right:1px solid rgba(255,255,255,.12); border-bottom:1px solid rgba(255,255,255,.12); text-align:left; vertical-align:middle }
+    .ck-table .tick:before{ content:"✓"; color:#fff; font-weight:700 }
+
+    /* Timeline sederhana */
+    .timeline{ position:relative; padding-left:28px }
+    .timeline:before{ content:""; position:absolute; left:12px; top:0; bottom:0; width:2px; background:#fff; opacity:.2 }
+    .timeline-item{ position:relative; margin-bottom:22px }
+    .timeline-item .dot{ position:absolute; left:-1px; top:4px; width:14px; height:14px; border-radius:50%; background:#fff; box-shadow:0 0 0 4px rgba(255,255,255,.13) }
+
+    /* Overlay video */
+    .popupvid-adastra{ position:fixed; inset:0; z-index:9999; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.85) }
+    .popupvid-adastra.show{ display:flex }
+    .popupvid-adastra video{ width:min(980px,94vw); max-height:86vh; border-radius:16px; border:1px solid rgba(255,255,255,.12) }
+
+    /* Mobile menu overlay */
+    .popup-mobile-menu{ position:fixed; inset:0; background:rgba(0,0,0,.95); z-index:999; display:none }
+    .popup-mobile-menu.show{ display:block }
+    .popup-mobile-menu .inner{ max-width:520px; margin:0 auto; padding:24px }
+    .popup-mobile-menu .mainmenu{ list-style:none; padding:0; margin:12px 0 }
+    .popup-mobile-menu .mainmenu li{ border-bottom:1px solid rgba(255,255,255,.12) }
+    .popup-mobile-menu .mainmenu a{ display:block; padding:14px 4px; }
+    .close-button, .main_mobile_menu{ background:transparent; border:1px solid rgba(255,255,255,.3); color:#fff; padding:.5rem .85rem; border-radius:999px }
+
+    /* WA Float */
+    .float{ position:fixed; width:54px; height:54px; bottom:20px; right:20px; background:#25D366; color:#fff; border-radius:50px; text-align:center; font-size:28px; box-shadow: 0 2px 10px rgba(0,0,0,.3); z-index:100 }
+    .my-float{ margin-top:13px; display:inline-block }
+
+    /* Ornaments (grayscale) */
+    .shape-image img{ filter:grayscale(100%) brightness(.8); opacity:.18; max-width:100% }
+  </style>
+</head>
+
+<body class="bg-black text-white">
+<!-- ===== Popup Video ===== -->
+<div class="popupvid-adastra" id="popupvid-adastra" role="dialog" aria-modal="true" aria-label="AD ASTRA video">
+  <video id="popup-video-adastra" src="vid.mp4" controls></video>
+</div>
+
+<div class="main-wrapper">
+  <!-- ===================== HEADER ===================== -->
+  <header class="header-sticky bg-dark">
+    <div class="container">
+      <div class="row align-items-center py-2">
+        <!-- Logo -->
+        <div class="col-lg-12 col-xl-2 col-md-12 col-8">
+          <div class="logo">
+            <a href="#home"><img class="logo-dark" src="logo.png" alt="AD ASTRA Logo"></a>
+          </div>
+        </div>
+        <!-- Desktop Nav -->
+        <div class="col-lg-10 d-none d-xl-block">
+          <nav>
+            <ul class="d-flex gap-3 justify-content-end align-items-center m-0 list-unstyled">
+              <li><a href="#about">Purpose</a></li>
+              <li><a href="#problem-solution">Problem & Solution</a></li>
+              <li><a href="#roadmap">Roadmap</a></li>
+              <li><a href="#deliverables">Deliverables</a></li>
+              <li><a href="#life-after">Life After</a></li>
+              <li><a href="#parents">Parents</a></li>
+              <li><a href="#contact">Enroll</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="col-4 d-xl-none text-end">
+          <button class="main_mobile_menu" id="openMenu">☰ Menu</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Mobile Menu Overlay ===== -->
+  <div class="popup-mobile-menu" id="mobileMenu">
+    <div class="inner">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="logo"><a href="#home"><img src="logo.png" alt="Logo" style="height:64px"></a></div>
+        <button class="close-button" id="closeMenu">✕ Close</button>
+      </div>
+      <ul class="mainmenu mt-3">
+        <li><a href="#about" class="menu-link">Purpose</a></li>
+        <li><a href="#problem-solution" class="menu-link">Problem & Solution</a></li>
+        <li><a href="#roadmap" class="menu-link">Roadmap</a></li>
+        <li><a href="#deliverables" class="menu-link">Deliverables</a></li>
+        <li><a href="#life-after" class="menu-link">Life After</a></li>
+        <li><a href="#parents" class="menu-link">Why Parents Love Us</a></li>
+        <li><a href="#contact" class="menu-link">Enroll</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="home" class="bg-black">
+    <div class="container py-5">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6 order-2 order-lg-1">
+          <div class="mt-2">
+            <span class="d-block">Coding School for Future Tech Leaders</span>
+            <h1 class="mt-2">The Future Starts Here</h1>
+            <p class="mt-3 lead">
+              By 2035, coding will be an essential skill, just like English and Math. Is your child ready?
+            </p>
+            <div class="mt-4 d-flex gap-2">
+              <a href="#contact" class="btn btn-outline-light">🚀 Enroll Now</a>
+              <button class="btn btn-outline-light" id="open-video">▶ Watch Intro</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2">
+          <div class="d-flex justify-content-center">
+            <div class="thumbvid">
+              <video src="vid.mp4" width="100%" autoplay muted loop playsinline></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ornaments (opsional, pakai asset yang sama) -->
+      <div class="d-none d-xl-block">
+        <div class="shape-image mt-4"><img src="assets/images/shapes/shape-05-03.png" alt="shape"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT (Purpose / Problem / Solution) ===================== -->
+  <section id="about" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 text-center">
+          <h3 class="title">Purpose</h3>
+          <p class="mt-3 lead">
+            At AD ASTRA, we empower children to be creators, not just consumers of technology —
+            nurturing full-stack developers, innovators, and AI-savvy entrepreneurs from age 4.
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1">
+        <div class="col-md-4">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="m-0">🎯 Purpose</h6>
+            <p class="mt-2 m-0">Empower kids to create with code, design, and robotics — not just consume screens.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="m-0">⚠️ Problem</h6>
+            <p class="mt-2 m-0">Traditional education falls short for a digital-first world; kids get theory without hands-on exposure in coding, AI, and robotics.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="m-0">💡 Solution</h6>
+            <p class="mt-2 m-0">A future-oriented coding & innovation academy with project-based learning in technology, product creation, and entrepreneurship.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROBLEM & SOLUTION (detail) ===================== -->
+  <section id="problem-solution" class="py-5 bg-black">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="glass-dark p-4 h-100">
+            <h4>Problem We Solve</h4>
+            <ul class="bullet m-0 mt-2">
+              <li>Kids are screen consumers, not builders.</li>
+              <li>Schools rarely teach shipping real projects.</li>
+              <li>No clear pathway to certification & portfolio.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="glass-dark p-4 h-100">
+            <h4>Our Approach</h4>
+            <ul class="bullet m-0 mt-2">
+              <li>Project-based learning from day one.</li>
+              <li>Full-stack tracks + AI & Robotics labs.</li>
+              <li>Mentoring, Demo Day, & certification.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ROADMAP ===================== -->
+  <section id="roadmap" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <img src="pic-2.jpg" class="img-fluid rounded-2xl border border-light-15" alt="Roadmap">
+        </div>
+        <div class="col-lg-7">
+          <h3 class="title">Roadmap</h3>
+          <p class="text-white-50">High-level journey from first lines of code to public demo day.</p>
+          <div class="timeline mt-3">
+            <div class="timeline-item">
+              <span class="dot"></span>
+              <h6 class="mb-1">Discover Foundations (Ages 4–8)</h6>
+              <p class="mb-2">Logic, creative making, unplugged & block coding.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="dot"></span>
+              <h6 class="mb-1">Build Projects (Ages 9–12)</h6>
+              <p class="mb-2">Web apps, simple games, intro to hardware.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="dot"></span>
+              <h6 class="mb-1">Ship Products (Ages 13–15)</h6>
+              <p class="mb-2">Full-stack paths, APIs, data & AI labs.</p>
+            </div>
+            <div class="timeline-item">
+              <span class="dot"></span>
+              <h6 class="mb-1">Pitch & Portfolio (Ages 16–18)</h6>
+              <p class="mb-0">Demo Day, startup POC, certification.</p>
+            </div>
+          </div>
+          <div class="mt-3"><a href="#contact" class="btn btn-outline-light">🏁 Join Next Intake</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== REAL DELIVERABLES ===================== -->
+  <section id="deliverables" class="py-5 bg-black">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <h3 class="title">Real Deliverables</h3>
+          <p>Graduation Gift: Your Child’s Own Tech Startup</p>
+          <ul class="bullet mt-3">
+            <li>Internationally recognized Full-Stack Developer Certification.</li>
+            <li>Real-world project experience (apps, websites, integrated hardware & software).</li>
+            <li>Practical skills in Robotics & Generative AI.</li>
+            <li>A validated Proof of Concept (POC) for their startup idea.</li>
+            <li>Experience pitching to real mentors, investors, or universities.</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <img src="pic-1.jpg" class="img-fluid rounded-2xl border border-light-15" alt="Deliverables">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LIFE AFTER AD ASTRA ===================== -->
+  <section id="life-after" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 text-center">
+          <h3 class="title">Life After AD ASTRA</h3>
+          <p class="lead">What’s Next? Anything They Dream Of.</p>
+        </div>
+      </div>
+      <div class="row g-4 mt-1">
+        <div class="col-md-6">
+          <div class="glass-dark p-4 h-100">
+            <h6>University & Career</h6>
+            <ul class="m-0 mt-2 bullet">
+              <li>Apply to top global universities using startup POC & developer credentials.</li>
+              <li>Work remotely as a freelance developer with recognized certification.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass-dark p-4 h-100">
+            <h6>Startup & Growth</h6>
+            <ul class="m-0 mt-2 bullet">
+              <li>Start a business, pitch to real investors, and scale ideas.</li>
+              <li>Join the global tech workforce even before finishing college.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WHY PARENTS LOVE US ===================== -->
+  <section id="parents" class="py-5 bg-black">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 text-center">
+          <h3 class="title">Why Parents Love Us</h3>
+          <p class="mt-2">Not Just Learning. Life-Changing Growth.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="mb-2">Safe & Structured</h6>
+            <p class="m-0">Personalized learning experience with clear pathways.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="mb-2">Teamwork & Empathy</h6>
+            <p class="m-0">Group projects build communication & presentation skills.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="mb-2">Critical Thinking</h6>
+            <p class="m-0">Develops leadership, problem-solving, and confidence.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="glass-dark p-4 h-100">
+            <h6 class="mb-2">Demo Days & Pitch</h6>
+            <p class="m-0">Public showcases improve performance & communication.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4 mt-1">
+        <div class="col-12">
+          <div class="glass-dark p-4">
+            <h6 class="m-0">Mentors</h6>
+            <p class="m-0 mt-2">
+              Mentors from leading tech companies like Tokopedia, Gojek, and Google.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ENROLL / CONTACT ===================== -->
+  <section id="contact" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 text-center">
+          <span class="d-block">Enroll Now</span>
+          <h3 class="title mt-1">Ready to Future-Proof Your Child?</h3>
+          <p class="mt-2">
+            New intakes open every month • Ages 4–18 • Weekend open houses • Scholarships & trials
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-5 mt-1">
+        <div class="col-lg-6">
+          <div class="glass-dark p-4 h-100">
+            <h6>Call-to-Actions</h6>
+            <ul class="bullet mt-2">
+              <li>Book a free consultation today</li>
+              <li>Sign up for the open house (Every Weekend!)</li>
+              <li>Scan the QR code to enroll or chat with our admissions team</li>
+            </ul>
+
+            <h6 class="mt-4">Contact Info</h6>
+            <ul class="bullet">
+              <li>Phone: 08</li>
+              <li>Website: www.adastracoding.com</li>
+              <li>Instagram: @adastracoding</li>
+            </ul>
+            <div class="mt-3">
+              <a href="#contact-form" class="btn btn-outline-light">💬 Chat Admissions</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <form class="row" id="contact-form">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg bg-dark text-white border-light-15" name="name" placeholder="First name*">
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg bg-dark text-white border-light-15" name="lastname" placeholder="Last name*">
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="email" class="form-control form-control-lg bg-dark text-white border-light-15" name="email" placeholder="Email*">
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <input type="tel" class="form-control form-control-lg bg-dark text-white border-light-15" name="phone" placeholder="Phone number*">
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <div class="mb-3">
+                <textarea class="form-control bg-dark text-white border-light-15" name="message" placeholder="Message to us"></textarea>
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <button class="btn btn-outline-light" type="submit"><span>Submit Now</span></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== mobile bottom nav + WA float ===== -->
+  <nav class="mobile_navigation d-xl-none">
+    <div class="position-fixed bottom-0 start-0 end-0 p-2" style="z-index:998;">
+      <div class="d-flex justify-content-between align-items-center glass-dark px-3 py-2 rounded-2xl">
+        <button class="main_mobile_menu" id="openMenu2">☰ Menu</button>
+        <a href="#contact" class="btn btn-outline-light btn-sm">👤 Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <a href="https://wa.me/628111333870" class="float" target="_blank" aria-label="WhatsApp"><span class="my-float">✆</span></a>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-dark">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <div>
+            <a href="#home"><img class="logo-dark" src="logo.png" alt="Logo" style="height: 120px!important;"></a>
+            <p class="mt-2">Coding, AI, and robotics through hands-on, project-based learning.</p>
+            <div class="d-flex gap-3 mt-2">
+              <a href="#" aria-label="Facebook">Fb</a>
+              <a href="#" aria-label="LinkedIn">In</a>
+              <a href="#" aria-label="Pinterest">Pt</a>
+              <a href="#" aria-label="Twitter">Tw</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div>
+            <h5 class="mb-3">Explore</h5>
+            <ul class="list-unstyled m-0 bullet">
+              <li><a href="#about">Purpose</a></li>
+              <li><a href="#problem-solution">Problem & Solution</a></li>
+              <li><a href="#roadmap">Roadmap</a></li>
+              <li><a href="#deliverables">Deliverables</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div>
+            <h5 class="mb-3">For Families</h5>
+            <ul class="list-unstyled m-0 bullet">
+              <li><a href="#parents">Why Parents Love Us</a></li>
+              <li><a href="#life-after">Life After AD ASTRA</a></li>
+              <li><a href="#contact">Enroll</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div>
+            <h5 class="mb-3">Contact</h5>
+            <ul class="list-unstyled m-0 bullet">
+              <li>Phone: 08</li>
+              <li><a href="#">www.adastracoding.com</a></li>
+              <li><a href="#">@adastracoding</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="py-3 border-top border-light-15">
+      <div class="container">
+        <div class="row"><div class="col-12"><p class="text-center m-0">Copyright 2024 <a href="#home">AD ASTRA</a> All Rights Reserved</p></div></div>
+      </div>
+    </div>
+  </footer>
+</div><!-- /.main-wrapper -->
+
+<!-- JS (inline, vanilla) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function(){
+    // ===== Mobile menu toggle =====
+    const mobileMenu = document.getElementById('mobileMenu');
+    const openMenu = document.getElementById('openMenu');
+    const openMenu2 = document.getElementById('openMenu2');
+    const closeMenu = document.getElementById('closeMenu');
+
+    function showMenu(){ mobileMenu.classList.add('show'); }
+    function hideMenu(){ mobileMenu.classList.remove('show'); }
+
+    if(openMenu) openMenu.addEventListener('click', showMenu);
+    if(openMenu2) openMenu2.addEventListener('click', showMenu);
+    if(closeMenu) closeMenu.addEventListener('click', hideMenu);
+    mobileMenu.addEventListener('click', function(e){ if(e.target.id==='mobileMenu') hideMenu(); });
+    document.querySelectorAll('.menu-link').forEach(a=>a.addEventListener('click', hideMenu));
+
+    // ===== Popup video =====
+    const overlay = document.getElementById('popupvid-adastra');
+    const video   = document.getElementById('popup-video-adastra');
+    const openBtn = document.getElementById('open-video');
+    const thumb   = document.querySelector('.thumbvid');
+
+    function openPopup(){ overlay.classList.add('show'); }
+    function closePopup(){ video.pause(); overlay.classList.remove('show'); }
+
+    [openBtn, thumb].forEach(el=>{ if(el){ el.addEventListener('click', (e)=>{ e.preventDefault(); openPopup(); }); }});
+    overlay.addEventListener('click', closePopup);
+    video.addEventListener('click', e=>e.stopPropagation());
+    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && overlay.classList.contains('show')) closePopup(); });
+  });
+</script>
+</body>
+</html>
