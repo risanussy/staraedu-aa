@@ -4,515 +4,475 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>AD ASTRA – Coding School for Future Tech Leaders</title>
-  <meta name="robots" content="" />
   <meta name="description" content="AD ASTRA is a future-oriented coding & innovation academy for ages 4–18: hands-on coding, AI, robotics, product creation, and entrepreneurship." />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- CSS ONLY via <style> (Bootstrap from CDN using @import) -->
   <style>
+    /* Bootstrap via @import (CSS-only) */
     @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 
-    /* ==== GLOBAL BLACK & WHITE ==== */
-    html{ scroll-behavior:smooth }
-    body{ background:#000; color:#fff; }
-    a, a:hover, a:focus{ color:#fff; text-decoration:none }
-    .text-white{ color:#fff!important }
-    .border-light-15{ border-color:rgba(255,255,255,.15)!important }
-    .rounded-2xl{ border-radius:1.25rem }
-    .lead{ font-size:1.125rem }
-    .logo-dark{ height:90px!important; transform:scale(1.4) }
-
-    /* Header (tanpa tombol menu) */
-    .header-sticky{ position:sticky; top:0; z-index:1099; border-bottom:1px solid rgba(255,255,255,.08) }
-
-    /* Kartu kaca */
-    .glass-dark{
-      background:rgba(255,255,255,.03);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:16px;
-      backdrop-filter:blur(4px);
+    :root{
+      --bg:#000; --fg:#fff; --fg-soft:rgba(255,255,255,.75);
+      --line:rgba(255,255,255,.12); --line-soft:rgba(255,255,255,.08);
+      --muted:rgba(255,255,255,.55); --radius:16px;
     }
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--fg)}
+    a{color:#fff;text-decoration:none}
+    .border-soft{border:1px solid var(--line)}
+    .rounded-2xl{border-radius:1.25rem}
+    .muted{color:var(--muted)!important}
 
-    /* Hero video circle */
-    .thumbvid{ display:flex; align-items:center; justify-content:center; width:480px; height:480px; border-radius:50%; overflow:hidden; border:1px solid rgba(255,255,255,.12) }
-    @media (max-width:576px){
-      .thumbvid{ width:320px; height:320px }
-      .logo-dark{ display:flex; justify-self:center }
-      .logo{ width:100%!important }
-    }
+    /* HEADER (sticky + auto-hide) */
+    .header-sticky{position:sticky;top:0;z-index:1100;background:#000;
+      border-bottom:1px solid var(--line-soft);
+      transition:transform .28s ease, backdrop-filter .28s ease;
+      backdrop-filter:saturate(120%) blur(6px)}
+    .header-hidden{transform:translateY(-100%)}
+    .brand img{height:72px}
+    @media(min-width:1200px){.brand img{height:86px}}
 
-    .bullet li{ margin-bottom:.5rem }
+    /* Nav rapi */
+    .main-nav{display:flex;gap:22px;align-items:center;justify-content:center}
+    .main-nav a{position:relative;padding:.35rem .25rem;font-weight:500;white-space:nowrap;opacity:.95}
+    .main-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
+    .main-nav a:hover::after{transform:scaleX(1)}
+    .main-nav a.active{opacity:1}
+    .main-nav a.active::after{transform:scaleX(1)}
 
-    /* Timeline */
-    .timeline{ position:relative; padding-left:40px }
-    .timeline-item{ position:relative; margin-bottom:22px }
-    .timeline-item .dot{ position:absolute; left:-28px; top:6px; width:12px; height:12px; border-radius:50%; background:#fff; box-shadow:0 0 0 4px rgba(255,255,255,.13) }
+    /* Cards & sections */
+    .glass{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(4px)}
+    [data-page]{display:none}
+    [data-page].active{display:block}
+    .section{padding:72px 0}
+    @media(min-width:992px){.section{padding:96px 0}}
+    .rule{height:1px;background:var(--line);margin:18px 0 26px}
 
-    /* Popup video */
-    .popupvid-adastra{ position:fixed; inset:0; z-index:9999; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,.85) }
-    .popupvid-adastra.show{ display:flex }
-    .popupvid-adastra video{ width:min(980px,94vw); max-height:86vh; border-radius:16px; border:1px solid rgba(255,255,255,.12) }
+    .thumbvid{display:flex;align-items:center;justify-content:center;width:480px;height:480px;border-radius:50%;overflow:hidden;border:1px solid var(--line)}
+    @media (max-width:576px){.thumbvid{width:300px;height:300px}}
 
-    /* ===== Mobile menu overlay (dibuka dari bottom bar) ===== */
-    .popup-mobile-menu{ position:fixed; inset:0; background:rgba(0,0,0,.95); z-index:998; display:none }
-    .popup-mobile-menu.show{ display:block }
-    .popup-mobile-menu .inner{ max-width:520px; margin:0 auto; padding:24px }
-    .popup-mobile-menu .mainmenu{ list-style:none; padding:0; margin:12px 0 }
-    .popup-mobile-menu .mainmenu li{ border-bottom:1px solid rgba(255,255,255,.12) }
-    .popup-mobile-menu .mainmenu a{ display:block; padding:14px 4px }
+    .stat{border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:center}
+    .grid-3{display:grid;gap:18px} @media(min-width:992px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+    .grid-2{display:grid;gap:18px} @media(min-width:992px){.grid-2{grid-template-columns:repeat(2,1fr)}}
 
-    .btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,.3); color:#fff; padding:.5rem .85rem; border-radius:999px }
+    .timeline{position:relative;padding-left:34px}
+    .timeline-item{position:relative;margin-bottom:20px}
+    .timeline-item .dot{position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.13)}
 
-    /* ===== Bottom bar ===== */
-    .mobile_navigation .glass-dark{ backdrop-filter:blur(4px) }
-    #bottomToggle{ color:#fff }                /* default putih */
-    #bottomToggle.close-state{ color:#fff!important } /* saat "✕ Close" tetap putih */
+    /* FAQ */
+    .faq .item{border-bottom:1px solid var(--line-soft);padding:14px 0}
+    .faq .q{display:flex;justify-content:space-between;gap:10px;cursor:pointer}
+    .faq .a{display:none;padding-top:8px;color:rgba(255,255,255,.78)}
+    .faq .item.open .a{display:block}
 
-    /* ===== Purpose (refined) ===== */
-    .purpose-intro{ color:rgba(255,255,255,.75) }
-    .purpose-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px }
-    @media (max-width:992px){ .purpose-grid{ grid-template-columns:1fr } }
-    .purpose-card{
-      position:relative; overflow:hidden;
-      background:linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
-      border:1px solid rgba(255,255,255,.12);
-      border-radius:18px; padding:22px;
-      transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-    }
-    .purpose-card:hover{ transform:translateY(-4px); border-color:rgba(255,255,255,.25); box-shadow:0 12px 28px rgba(0,0,0,.5) }
-    .purpose-badge{
-      width:42px; height:42px; border-radius:12px; display:flex; align-items:center; justify-content:center;
-      border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.06); margin-bottom:12px;
-    }
-    .purpose-title{ font-size:1.05rem; letter-spacing:.2px; margin:0 }
-    .purpose-desc{ margin:6px 0 0; color:rgba(255,255,255,.78); line-height:1.55 }
-    .rule-soft{ height:1px; background:rgba(255,255,255,.12) }
+    /* Bottom bar */
+    .mobile_navigation .glass{backdrop-filter:blur(4px)}
+    #bottomToggle{color:#fff}
+    #bottomToggle.close-state{color:#fff!important}
   </style>
 </head>
+<body>
 
-<body class="bg-black text-white">
-<!-- ===== Popup Video ===== -->
-<div class="popupvid-adastra" id="popupvid-adastra" role="dialog" aria-modal="true" aria-label="AD ASTRA video">
-  <video id="popup-video-adastra" src="vid.mp4" controls></video>
+<!-- POPUP VIDEO -->
+<div id="popup" class="position-fixed top-0 start-0 w-100 h-100 d-none" style="background:rgba(0,0,0,.85);z-index:1200;align-items:center;justify-content:center">
+  <video id="popupVideo" src="vid.mp4" controls style="width:min(980px,94vw);max-height:86vh;border-radius:16px;border:1px solid var(--line)"></video>
 </div>
 
-<div class="main-wrapper">
-  <!-- ===================== HEADER (tanpa menu) ===================== -->
-  <header class="header-sticky" style="background-color:#000;">
-    <div class="container">
-      <div class="row align-items-center py-2">
-        <div class="col-12 col-xl-2">
-          <div class="logo">
-            <a href="#home"><img class="logo-dark" src="logo.png" alt="AD ASTRA Logo"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- ===== Mobile Menu Overlay ===== -->
-  <div class="popup-mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="inner">
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="logo"><a href="#home"><img src="logo.png" alt="Logo" style="height:64px"></a></div>
-        <!-- Close text warna PUTIH -->
-        <button class="btn-ghost text-white" id="closeMenu">✕ Close</button>
-      </div>
-      <ul class="mainmenu mt-3">
-        <li><a href="#about" class="menu-link">Purpose</a></li>
-        <li><a href="#problem-solution" class="menu-link">Problem & Solution</a></li>
-        <li><a href="#roadmap" class="menu-link">Roadmap</a></li>
-        <li><a href="#deliverables" class="menu-link">Deliverables</a></li>
-        <li><a href="#life-after" class="menu-link">Life After AD ASTRA</a></li>
-        <li><a href="#parents" class="menu-link">Why Parents Love Us</a></li>
-        <li><a href="#contact" class="menu-link">Enroll</a></li>
-      </ul>
+<!-- HEADER -->
+<header id="appHeader" class="header-sticky">
+  <div class="container">
+    <!-- CENTER logo on mobile, spread on desktop -->
+    <div class="d-flex align-items-center justify-content-center justify-content-xl-between py-2">
+      <a class="brand d-inline-flex align-items-center" href="#/home" data-route>
+        <img src="logo.png" alt="AD ASTRA" />
+      </a>
+      <!-- Desktop Nav -->
+      <nav class="d-none d-xl-flex main-nav">
+        <a href="#/about" data-route>Purpose</a>
+        <a href="#/problem-solution" data-route>Problem &amp; Solution</a>
+        <a href="#/roadmap" data-route>Roadmap</a>
+        <a href="#/deliverables" data-route>Deliverables</a>
+        <a href="#/life-after" data-route>Life After</a>
+        <a href="#/parents" data-route>Parents</a>
+        <a href="#/contact" data-route>Enroll</a>
+      </nav>
     </div>
   </div>
+</header>
 
-  <!-- ===================== HERO ===================== -->
-  <section id="home" class="bg-black">
-    <div class="container py-5">
+<!-- MOBILE MENU -->
+<div class="popup-mobile-menu d-xl-none d-none position-fixed top-0 start-0 w-100 h-100" id="mobileMenu" style="background:rgba(0,0,0,.96);z-index:1190">
+  <div class="inner" style="max-width:520px;margin:0 auto;padding:22px">
+    <div class="d-flex justify-content-between align-items-center">
+      <a href="#/home" data-route><img src="logo.png" alt="Logo" style="height:64px"></a>
+      <button class="btn btn-outline-light btn-sm" id="closeMenu">✕ Close</button>
+    </div>
+    <div class="rule"></div>
+    <ul class="list-unstyled m-0">
+      <li class="py-2"><a class="d-block" href="#/about" data-route>Purpose</a></li>
+      <li class="py-2"><a class="d-block" href="#/problem-solution" data-route>Problem &amp; Solution</a></li>
+      <li class="py-2"><a class="d-block" href="#/roadmap" data-route>Roadmap</a></li>
+      <li class="py-2"><a class="d-block" href="#/deliverables" data-route>Deliverables</a></li>
+      <li class="py-2"><a class="d-block" href="#/life-after" data-route>Life After AD ASTRA</a></li>
+      <li class="py-2"><a class="d-block" href="#/parents" data-route>Why Parents Love Us</a></li>
+      <li class="py-2"><a class="d-block" href="#/contact" data-route>Enroll</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- PAGES -->
+<main id="app">
+  <!-- HOME -->
+  <section data-page="home" class="section active">
+    <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-lg-6 order-2 order-lg-1">
-          <div class="mt-2">
-            <span class="d-block">Coding School for Future Tech Leaders</span>
-            <h1 class="mt-2">The Future Starts Here</h1>
-            <p class="mt-3 lead">By 2035, coding will be an essential skill, just like English and Math. Is your child ready?</p>
-            <div class="mt-4 d-flex gap-2">
-              <a href="#contact" class="btn btn-outline-light">🚀 Enroll Now</a>
-            </div>
+          <span class="border-soft rounded-pill px-3 py-1">Coding School for Future Tech Leaders</span>
+          <h1 class="mt-3">The Future Starts Here</h1>
+          <p class="lead" style="color:rgba(255,255,255,.78)">By 2035, coding will be an essential skill like English and Math. Is your child ready?</p>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <span class="border-soft rounded-pill px-3 py-1">Ages 4–18</span>
+            <span class="border-soft rounded-pill px-3 py-1">AI & Robotics</span>
+            <span class="border-soft rounded-pill px-3 py-1">Project-Based</span>
+            <span class="border-soft rounded-pill px-3 py-1">Portfolio & POC</span>
+          </div>
+          <div class="mt-4 d-flex gap-2">
+            <a href="#/contact" data-route class="btn btn-outline-light btn-lg">🚀 Enroll Now</a>
+            <a href="#/about" data-route class="btn btn-outline-light">Learn More</a>
           </div>
         </div>
-        <div class="col-lg-6 order-1 order-lg-2">
-          <div class="d-flex justify-content-center">
-            <div class="thumbvid">
-              <video src="vid.mp4" width="100%" style="transform: translateY(80px) !important;" autoplay muted loop playsinline></video>
-            </div>
+        <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
+          <div class="thumbvid" id="heroThumb" style="cursor:pointer" title="Play video">
+            <video src="vid.mp4" width="100%" style="transform: translateY(80px)" autoplay muted loop playsinline></video>
           </div>
         </div>
       </div>
 
-      <div class="d-none d-xl-block">
-        <div class="shape-image mt-4"><img src="assets/images/shapes/shape-05-03.png" alt="shape"></div>
+      <div class="row g-3 mt-5">
+        <div class="col-6 col-lg-3"><div class="stat"><h3>4–18</h3><div class="muted">Age Tracks</div></div></div>
+        <div class="col-6 col-lg-3"><div class="stat"><h3>120+</h3><div class="muted">Projects Shipped</div></div></div>
+        <div class="col-6 col-lg-3"><div class="stat"><h3>8</h3><div class="muted">Labs & Studios</div></div></div>
+        <div class="col-6 col-lg-3"><div class="stat"><h3>100%</h3><div class="muted">Portfolio Outcome</div></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PURPOSE ===================== -->
-  <section id="about" class="py-5 bg-dark">
+  <!-- PURPOSE -->
+  <section data-page="about" class="section" style="background:#0b0b0b">
     <div class="container">
-      <div class="row g-3">
-        <div class="col-12 text-center">
-          <h3 class="title mb-2">Purpose</h3>
-          <p class="purpose-intro mx-auto" style="max-width:820px">
-            Clear, outcome‑driven goals so every learner knows exactly where they’re headed.
-          </p>
-        </div>
+      <h2 class="mb-1">Purpose</h2>
+      <p class="muted">Clear, outcome-driven goals so every learner knows exactly where they’re headed.</p>
+      <div class="rule"></div>
+
+      <div class="grid-3">
+        <article class="glass p-4"><h5>Enter Top Global Universities with a Strong POC</h5><p class="mt-2 muted">Students craft Proof-of-Concepts and polished portfolios—evidence that elevates applications.</p></article>
+        <article class="glass p-4"><h5>Work Anywhere with Industry-Ready Skills</h5><p class="mt-2 muted">Full-stack fundamentals, version control, deployment, team practices.</p></article>
+        <article class="glass p-4"><h5>Become Entrepreneurs & Build Startups</h5><p class="mt-2 muted">From idea to MVP: validate problems, ship, pitch, launch.</p></article>
       </div>
 
-      <div class="rule-soft my-4"></div>
-
-      <div class="purpose-grid">
-        <article class="purpose-card">
-          <div class="purpose-badge" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-          </div>
-          <h4 class="purpose-title">Enter Top Global Universities with a Strong POC</h4>
-          <p class="purpose-desc">Students craft real Proof‑of‑Concepts and polished portfolios—tangible evidence that elevates applications and showcases genuine capability.</p>
-        </article>
-
-        <article class="purpose-card">
-          <div class="purpose-badge" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-          </div>
-          <h4 class="purpose-title">Work Anywhere with Industry‑Ready Skills</h4>
-          <p class="purpose-desc">Full‑stack fundamentals, version control, deployment, and team practices—so graduates can step into remote, freelance, or internship roles with confidence.</p>
-        </article>
-
-        <article class="purpose-card">
-          <div class="purpose-badge" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-          </div>
-          <h4 class="purpose-title">Become Entrepreneurs & Build Startups</h4>
-          <p class="purpose-desc">From idea to MVP: validate problems, ship products, and pitch to real audiences—building the mindset and momentum to launch.</p>
-        </article>
+      <h5 class="mt-5">Curriculum Tracks</h5>
+      <div class="grid-3 mt-2">
+        <div class="glass p-3"><strong>Foundations (4–8)</strong><div class="muted mt-1">Logic, creative making, unplugged & block coding</div></div>
+        <div class="glass p-3"><strong>Web & Games (9–12)</strong><div class="muted mt-1">HTML/CSS/JS, simple games, intro hardware</div></div>
+        <div class="glass p-3"><strong>Full-Stack & Data (13–15)</strong><div class="muted mt-1">APIs, DB, AI labs</div></div>
+        <div class="glass p-3"><strong>Startup & Portfolio (16–18)</strong><div class="muted mt-1">POC, Demo Day, certification</div></div>
+        <div class="glass p-3"><strong>Robotics Studio</strong><div class="muted mt-1">Sensors, controllers, mechatronics</div></div>
+        <div class="glass p-3"><strong>AI Studio</strong><div class="muted mt-1">ML basics, prompts, ethics & safety</div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PROBLEM & SOLUTION ===================== -->
-  <section id="problem-solution" class="py-5 bg-black">
+  <!-- PROBLEM & SOLUTION -->
+  <section data-page="problem-solution" class="section">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <div class="glass-dark p-4 h-100">
-            <h4>Problem We Solve</h4>
-            <ul class="bullet m-0 mt-2">
-              <li>Kids are screen consumers, not builders.</li>
-              <li>Schools rarely teach shipping real projects.</li>
-              <li>No clear pathway to certification & portfolio.</li>
-            </ul>
-          </div>
+      <div class="grid-2">
+        <div class="glass p-4">
+          <h4>Problem We Solve</h4>
+          <ul class="mt-2 muted">
+            <li>Kids are screen consumers, not builders.</li>
+            <li>Schools rarely teach shipping real projects.</li>
+            <li>No clear pathway to certification & portfolio.</li>
+          </ul>
         </div>
-        <div class="col-lg-6">
-          <div class="glass-dark p-4 h-100">
-            <h4>Our Approach</h4>
-            <ul class="bullet m-0 mt-2">
-              <li>Project-based learning from day one.</li>
-              <li>Full-stack tracks + AI & Robotics labs.</li>
-              <li>Mentoring, Demo Day, & certification.</li>
-            </ul>
-          </div>
+        <div class="glass p-4">
+          <h4>Our Approach</h4>
+          <ul class="mt-2 muted">
+            <li>Project-based learning from day one.</li>
+            <li>Full-stack tracks + AI & Robotics labs.</li>
+            <li>Mentoring, Demo Day, & certification.</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== ROADMAP ===================== -->
-  <section id="roadmap" class="py-5 bg-dark">
+  <!-- ROADMAP -->
+  <section data-page="roadmap" class="section" style="background:#0b0b0b">
     <div class="container">
       <div class="row g-5 align-items-center">
-        <div class="col-lg-5">
-          <img src="pic-2.jpg" class="img-fluid rounded-2xl border border-light-15" alt="Roadmap">
-        </div>
+        <div class="col-lg-5"><img src="pic-2.jpg" class="img-fluid rounded-2xl border-soft" alt="Roadmap"></div>
         <div class="col-lg-7">
-          <h3 class="title">Roadmap</h3>
-          <p class="text-white-50">High-level journey from first lines of code to public demo day.</p>
+          <h2 class="mb-1">Roadmap</h2>
+          <p class="muted">High-level journey from first lines of code to public demo day.</p>
           <div class="timeline mt-3">
-            <div class="timeline-item">
-              <span class="dot"></span>
-              <h6 class="mb-1">Discover Foundations (Ages 4–8)</h6>
-              <p class="mb-2">Logic, creative making, unplugged & block coding.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="dot"></span>
-              <h6 class="mb-1">Build Projects (Ages 9–12)</h6>
-              <p class="mb-2">Web apps, simple games, intro to hardware.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="dot"></span>
-              <h6 class="mb-1">Ship Products (Ages 13–15)</h6>
-              <p class="mb-2">Full-stack paths, APIs, data & AI labs.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="dot"></span>
-              <h6 class="mb-1">Pitch & Portfolio (Ages 16–18)</h6>
-              <p class="mb-0">Demo Day, startup POC, certification.</p>
-            </div>
+            <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Discover Foundations (Ages 4–8)</h6><p class="mb-2 muted">Logic, creative making, unplugged & block coding.</p></div>
+            <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Build Projects (Ages 9–12)</h6><p class="mb-2 muted">Web apps, simple games, intro to hardware.</p></div>
+            <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Ship Products (Ages 13–15)</h6><p class="mb-2 muted">Full-stack paths, APIs, data & AI labs.</p></div>
+            <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Pitch & Portfolio (Ages 16–18)</h6><p class="mb-0 muted">Demo Day, startup POC, certification.</p></div>
           </div>
-          <div class="mt-3"><a href="#contact" class="btn btn-outline-light">🏁 Join Next Intake</a></div>
+          <div class="mt-3"><a href="#/contact" data-route class="btn btn-outline-light">🏁 Join Next Intake</a></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== DELIVERABLES ===================== -->
-  <section id="deliverables" class="py-5 bg-black">
+  <!-- DELIVERABLES -->
+  <section data-page="deliverables" class="section">
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-6">
-          <h3 class="title">Real Deliverables</h3>
-          <p>What every graduate takes home.</p>
-
-          <div class="glass-dark p-4 mt-3">
+          <h2 class="mb-1">Real Deliverables</h2>
+          <p class="muted">What every graduate takes home.</p>
+          <div class="glass p-4 mt-3">
             <h5 class="mb-3">Delivered</h5>
             <ol class="mt-2">
-              <li><strong>Recognized Full‑Stack Developer Certification</strong><p class="m-0 mt-1">Clear proof of practical, industry‑aligned skills.</p></li>
-              <li class="mt-3"><strong>Hands‑on Exposure from Robotics to AI</strong><p class="m-0 mt-1">Build with hardware, code, and foundational ML experience.</p></li>
-              <li class="mt-3"><strong>Proof‑of‑Concept Startup Prototype</strong><p class="m-0 mt-1">A working MVP with pitch materials at graduation.</p></li>
+              <li><strong>Recognized Full-Stack Developer Certification</strong><p class="m-0 mt-1 muted">Clear proof of practical, industry-aligned skills.</p></li>
+              <li class="mt-3"><strong>Hands-on Exposure from Robotics to AI</strong><p class="m-0 mt-1 muted">Build with hardware, code, and foundational ML experience.</p></li>
+              <li class="mt-3"><strong>Proof-of-Concept Startup Prototype</strong><p class="m-0 mt-1 muted">A working MVP with pitch materials at graduation.</p></li>
             </ol>
-            <p class="mt-3"><em>All artifacts are organized for portfolios, applications, and interviews.</em></p>
           </div>
         </div>
-        <div class="col-lg-6">
-          <img src="pic-1.jpg" class="img-fluid rounded-2xl border border-light-15" alt="Deliverables">
-        </div>
+        <div class="col-lg-6"><img src="pic-1.jpg" class="img-fluid rounded-2xl border-soft" alt="Deliverables"></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== LIFE AFTER ===================== -->
-  <section id="life-after" class="py-5 bg-dark">
+  <!-- LIFE AFTER -->
+  <section data-page="life-after" class="section" style="background:#0b0b0b">
     <div class="container">
-      <div class="row g-5">
-        <div class="col-12 text-center">
-          <h3 class="title">Life After AD ASTRA</h3>
-          <p class="lead">What’s Next? Anything They Dream Of.</p>
-        </div>
-      </div>
+      <h2 class="mb-1">Life After AD ASTRA</h2>
+      <p class="muted">What’s Next? Anything They Dream Of.</p>
       <div class="row g-4 mt-1">
-        <div class="col-md-6">
-          <div class="glass-dark p-4 h-100">
-            <h6>University & Career</h6>
-            <ul class="m-0 mt-2 bullet">
-              <li>Apply to top global universities using startup POC & developer credentials.</li>
-              <li>Work remotely as a freelance developer with recognized certification.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="glass-dark p-4 h-100">
-            <h6>Startup & Growth</h6>
-            <ul class="m-0 mt-2 bullet">
-              <li>Start a business, pitch to real investors, and scale ideas.</li>
-              <li>Join the global tech workforce even before finishing college.</li>
-            </ul>
-          </div>
-        </div>
+        <div class="col-md-6"><div class="glass p-4 h-100"><h6>University & Career</h6><ul class="mt-2 muted"><li>Apply to top global universities using startup POC & credentials.</li><li>Work remotely as a freelance developer with certification.</li></ul></div></div>
+        <div class="col-md-6"><div class="glass p-4 h-100"><h6>Startup & Growth</h6><ul class="mt-2 muted"><li>Start a business, pitch to real investors, and scale ideas.</li><li>Join the global tech workforce even before finishing college.</li></ul></div></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== PARENTS ===================== -->
-  <section id="parents" class="py-5 bg-black">
+  <!-- PARENTS -->
+  <section data-page="parents" class="section">
     <div class="container">
-      <div class="row g-5">
-        <div class="col-12 text-center">
-          <h3 class="title">Why Parents Love Us</h3>
-          <p class="mt-2">Not Just Learning. Life-Changing Growth.</p>
-        </div>
-      </div>
+      <h2 class="mb-1">Why Parents Love Us</h2>
+      <p class="muted">Not Just Learning. Life-Changing Growth.</p>
       <div class="row g-4">
-        <div class="col-md-6 col-lg-3"><div class="glass-dark p-4 h-100"><h6 class="mb-2">Safe & Structured</h6><p class="m-0">Personalized learning experience with clear pathways.</p></div></div>
-        <div class="col-md-6 col-lg-3"><div class="glass-dark p-4 h-100"><h6 class="mb-2">Teamwork & Empathy</h6><p class="m-0">Group projects build communication & presentation skills.</p></div></div>
-        <div class="col-md-6 col-lg-3"><div class="glass-dark p-4 h-100"><h6 class="mb-2">Critical Thinking</h6><p class="m-0">Develops leadership, problem-solving, and confidence.</p></div></div>
-        <div class="col-md-6 col-lg-3"><div class="glass-dark p-4 h-100"><h6 class="mb-2">Demo Days & Pitch</h6><p class="m-0">Public showcases improve performance & communication.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="glass p-4 h-100"><h6 class="mb-2">Safe & Structured</h6><p class="m-0 muted">Personalized learning with clear pathways.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="glass p-4 h-100"><h6 class="mb-2">Teamwork & Empathy</h6><p class="m-0 muted">Group projects build communication.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="glass p-4 h-100"><h6 class="mb-2">Critical Thinking</h6><p class="m-0 muted">Leadership & problem-solving.</p></div></div>
+        <div class="col-md-6 col-lg-3"><div class="glass p-4 h-100"><h6 class="mb-2">Demo Days & Pitch</h6><p class="m-0 muted">Public showcases & confidence.</p></div></div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="glass p-4 mt-4 faq">
+        <h6 class="mb-3">FAQ</h6>
+        <div class="item">
+          <div class="q"><span>How do trials work?</span><span>+</span></div>
+          <div class="a">Book a weekend open house; students try a 60-minute studio session.</div>
+        </div>
+        <div class="item">
+          <div class="q"><span>Is it beginner friendly?</span><span>+</span></div>
+          <div class="a">Yes — we place learners by age and experience after a quick assessment.</div>
+        </div>
+        <div class="item">
+          <div class="q"><span>Do you offer scholarships?</span><span>+</span></div>
+          <div class="a">We have need-based and merit scholarships; ask our admissions team.</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" class="py-5 bg-dark">
+  <!-- CONTACT -->
+  <section data-page="contact" class="section" style="background:#0b0b0b">
     <div class="container">
-      <div class="row g-5">
-        <div class="col-12 text-center">
-          <span class="d-block">Enroll Now</span>
-          <h3 class="title mt-1">Ready to Future-Proof Your Child?</h3>
-          <p class="mt-2">New intakes open every month • Ages 4–18 • Weekend open houses • Scholarships & trials</p>
-        </div>
+      <div class="text-center">
+        <span class="muted d-block">Enroll Now</span>
+        <h2 class="mt-1">Ready to Future-Proof Your Child?</h2>
+        <p class="muted">Monthly intakes • Weekend open houses • Scholarships & trials</p>
       </div>
 
-      <div class="row g-5 mt-1">
-        <div class="col-lg-6">
-          <div class="glass-dark p-4 h-100">
+      <div class="row g-4 mt-2">
+        <div class="col-lg-5">
+          <div class="glass p-4 h-100">
             <h6>Call-to-Actions</h6>
-            <ul class="bullet mt-2">
+            <ul class="mt-2 muted">
               <li>Book a free consultation today</li>
               <li>Sign up for the open house (Every Weekend!)</li>
               <li>Scan the QR code to enroll or chat with our admissions team</li>
             </ul>
-
             <h6 class="mt-4">Contact Info</h6>
-            <ul class="bullet">
+            <ul class="muted">
               <li>Phone: 08</li>
               <li>Website: www.adastracoding.com</li>
               <li>Instagram: @adastracoding</li>
             </ul>
-            <div class="mt-3">
-              <a href="#contact-form" class="btn btn-outline-light">💬 Chat Admissions</a>
-            </div>
+            <div class="mt-3"><a href="#/contact#contact-form" data-route class="btn btn-outline-light">💬 Chat Admissions</a></div>
           </div>
         </div>
-
-        <div class="col-lg-6">
+        <div class="col-lg-7">
           <form class="row" id="contact-form">
-            <div class="col-lg-6"><div class="mb-3"><input type="text" class="form-control form-control-lg bg-dark text-white border-light-15" name="name" placeholder="First name*"></div></div>
-            <div class="col-lg-6"><div class="mb-3"><input type="text" class="form-control form-control-lg bg-dark text-white border-light-15" name="lastname" placeholder="Last name*"></div></div>
-            <div class="col-lg-12"><div class="mb-3"><input type="email" class="form-control form-control-lg bg-dark text-white border-light-15" name="email" placeholder="Email*"></div></div>
-            <div class="col-lg-12"><div class="mb-3"><input type="tel" class="form-control form-control-lg bg-dark text-white border-light-15" name="phone" placeholder="Phone number*"></div></div>
-            <div class="col-lg-12"><div class="mb-3"><textarea class="form-control bg-dark text-white border-light-15" name="message" placeholder="Message to us"></textarea></div></div>
-            <div class="col-lg-12"><button class="btn btn-outline-light" type="submit"><span>Submit Now</span></button></div>
+            <div class="col-md-6"><div class="mb-3"><input type="text" class="form-control form-control-lg bg-dark text-white border-soft" name="name" placeholder="First name*"></div></div>
+            <div class="col-md-6"><div class="mb-3"><input type="text" class="form-control form-control-lg bg-dark text-white border-soft" name="lastname" placeholder="Last name*"></div></div>
+            <div class="col-md-12"><div class="mb-3"><input type="email" class="form-control form-control-lg bg-dark text-white border-soft" name="email" placeholder="Email*"></div></div>
+            <div class="col-md-12"><div class="mb-3"><input type="tel" class="form-control form-control-lg bg-dark text-white border-soft" name="phone" placeholder="Phone number*"></div></div>
+            <div class="col-md-12"><div class="mb-3"><textarea class="form-control bg-dark text-white border-soft" name="message" placeholder="Message to us" rows="5"></textarea></div></div>
+            <div class="col-md-12"><button class="btn btn-outline-light" type="submit"><span>Submit Now</span></button></div>
           </form>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <!-- ===== MOBILE BOTTOM NAV ONLY ===== -->
-  <nav class="mobile_navigation d-xl-none">
-    <div class="position-fixed bottom-0 start-0 end-0 p-2" style="z-index:998;">
-      <div class="d-flex justify-content-between align-items-center glass-dark px-3 py-2 rounded-2xl">
-        <!-- Toggle button (teks putih). Saat open -> ✕ Close -->
-        <button class="btn-ghost text-white" id="bottomToggle" aria-controls="mobileMenu" aria-expanded="false">☰ Menu</button>
-        <a href="#contact" class="btn btn-outline-light btn-sm">👤 Contact</a>
+<!-- MOBILE BOTTOM NAV -->
+<nav class="mobile_navigation d-xl-none">
+  <div class="position-fixed bottom-0 start-0 end-0 p-2" style="z-index:1180;">
+    <div class="d-flex justify-content-between align-items-center glass px-3 py-2 rounded-2xl">
+      <button class="btn btn-outline-light btn-sm" id="bottomToggle" aria-controls="mobileMenu" aria-expanded="false">☰ Menu</button>
+      <a href="#/contact" data-route class="btn btn-outline-light btn-sm">👤 Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- FOOTER -->
+<footer class="pt-5" style="background:#000">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <a href="#/home" data-route><img src="logo.png" alt="Logo" style="height:110px"></a>
+        <p class="mt-2 muted">Coding, AI, and robotics through hands-on, project-based learning.</p>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="fw-semibold mb-2">Explore</div>
+        <ul class="list-unstyled m-0">
+          <li><a href="#/about" data-route>Purpose</a></li>
+          <li><a href="#/problem-solution" data-route>Problem &amp; Solution</a></li>
+          <li><a href="#/roadmap" data-route>Roadmap</a></li>
+          <li><a href="#/deliverables" data-route>Deliverables</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="fw-semibold mb-2">For Families</div>
+        <ul class="list-unstyled m-0">
+          <li><a href="#/parents" data-route>Why Parents Love Us</a></li>
+          <li><a href="#/life-after" data-route>Life After AD ASTRA</a></li>
+          <li><a href="#/contact" data-route>Enroll</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="fw-semibold mb-2">Contact</div>
+        <ul class="list-unstyled m-0">
+          <li class="muted">Phone: 08</li>
+          <li><a href="#">www.adastracoding.com</a></li>
+          <li><a href="#">@adastracoding</a></li>
+        </ul>
       </div>
     </div>
-  </nav>
-
-  <!-- ===================== FOOTER ===================== -->
-  <footer style="background-color:#000;">
-    <div class="container py-5">
-      <div class="row g-5">
-        <div class="col-lg-3 col-md-6">
-          <div>
-            <a href="#home"><img class="logo-dark" src="logo.png" alt="Logo" style="height: 120px!important;"></a>
-            <p class="mt-2">Coding, AI, and robotics through hands-on, project-based learning.</p>
-            <div class="d-flex gap-3 mt-2">
-              <a href="#" aria-label="Facebook">Fb</a>
-              <a href="#" aria-label="LinkedIn">In</a>
-              <a href="#" aria-label="Pinterest">Pt</a>
-              <a href="#" aria-label="Twitter">Tw</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div>
-            <h5 class="mb-3">Explore</h5>
-            <ul class="list-unstyled m-0 bullet">
-              <li><a href="#about">Purpose</a></li>
-              <li><a href="#problem-solution">Problem & Solution</a></li>
-              <li><a href="#roadmap">Roadmap</a></li>
-              <li><a href="#deliverables">Deliverables</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div>
-            <h5 class="mb-3">For Families</h5>
-            <ul class="list-unstyled m-0 bullet">
-              <li><a href="#parents">Why Parents Love Us</a></li>
-              <li><a href="#life-after">Life After AD ASTRA</a></li>
-              <li><a href="#contact">Enroll</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6">
-          <div>
-            <h5 class="mb-3">Contact</h5>
-            <ul class="list-unstyled m-0 bullet">
-              <li>Phone: 08</li>
-              <li><a href="#">www.adastracoding.com</a></li>
-              <li><a href="#">@adastracoding</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+    <div class="py-3 mt-4 border-top" style="border-color:var(--line-soft)!important">
+      <p class="text-center m-0 muted">Copyright 2024 <a href="#/home" data-route>AD ASTRA</a> — All Rights Reserved</p>
     </div>
+  </div>
+</footer>
 
-    <div class="py-3 border-top border-light-15">
-      <div class="container">
-        <div class="row"><div class="col-12"><p class="text-center m-0">Copyright 2024 <a href="#home">AD ASTRA</a> All Rights Reserved</p></div></div>
-      </div>
-    </div>
-  </footer>
-</div><!-- /.main-wrapper -->
-
-<!-- JS (inline, vanilla) -->
+<!-- JS -->
 <script>
-  document.addEventListener('DOMContentLoaded', function(){
-    // Elements
-    const body        = document.body;
-    const mobileMenu  = document.getElementById('mobileMenu');
-    const closeMenu   = document.getElementById('closeMenu');     // overlay header button
-    const bottomToggle= document.getElementById('bottomToggle');  // bottom-only toggle
-    const menuLinks   = document.querySelectorAll('.menu-link');
+document.addEventListener('DOMContentLoaded', function(){
+  const body = document.body;
+  const header = document.getElementById('appHeader');
 
-    function setBottomLabel(isOpen){
-      // pastikan text putih saat Close
-      bottomToggle.classList.toggle('close-state', isOpen);
-      bottomToggle.textContent = isOpen ? '✕ Close' : '☰ Menu';
-      bottomToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      bottomToggle.style.color = '#fff';
+  /* ====== ELEMENTS needed early (so safe in router) ====== */
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('closeMenu');
+  const bottomToggle = document.getElementById('bottomToggle');
+
+  /* ====== MENU helpers BEFORE router ====== */
+  function setBottomLabel(open){
+    if(!bottomToggle) return;
+    bottomToggle.textContent = open ? '✕ Close' : '☰ Menu';
+    bottomToggle.classList.toggle('close-state', open);
+  }
+  function openMenu(){
+    if(!menu) return;
+    menu.classList.remove('d-none'); menu.setAttribute('aria-hidden','false');
+    body.style.overflow='hidden'; setBottomLabel(true);
+  }
+  function closeMenu(){
+    if(!menu) return;
+    menu.classList.add('d-none'); menu.setAttribute('aria-hidden','true');
+    body.style.overflow=''; setBottomLabel(false);
+  }
+
+  /* ====== Hide-on-scroll header ====== */
+  let lastY = window.scrollY, hidden=false, ticking=false;
+  function onScroll(){
+    const y = window.scrollY, down = y > lastY, delta = Math.abs(y-lastY);
+    if(delta>6){
+      if(down && y>90 && !hidden){ header.classList.add('header-hidden'); hidden=true; }
+      else if(!down && hidden){ header.classList.remove('header-hidden'); hidden=false; }
+      lastY = y;
     }
+  }
+  window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(()=>{ onScroll(); ticking=false; }); ticking=true; } }, {passive:true});
 
-    function openMenu(){
-      mobileMenu.classList.add('show');
-      mobileMenu.setAttribute('aria-hidden','false');
-      body.style.overflow='hidden';
-      setBottomLabel(true);
-    }
-    function hideMenu(){
-      mobileMenu.classList.remove('show');
-      mobileMenu.setAttribute('aria-hidden','true');
-      body.style.overflow='';
-      setBottomLabel(false);
-    }
-    function toggleMenu(){ mobileMenu.classList.contains('show') ? hideMenu() : openMenu(); }
+  /* ====== Simple Router ====== */
+  const PAGES = [...document.querySelectorAll('[data-page]')].reduce((m,el)=> (m[el.dataset.page]=el,m),{});
+  const LINKS = document.querySelectorAll('[data-route]');
 
-    // Bind
-    if(bottomToggle) bottomToggle.addEventListener('click', toggleMenu);
-    if(closeMenu)    closeMenu.addEventListener('click', hideMenu);
-    if(mobileMenu)   mobileMenu.addEventListener('click', (e)=>{ if(e.target === mobileMenu) hideMenu(); });
-    menuLinks.forEach(a => a.addEventListener('click', hideMenu));
+  function setActiveLink(name){
+    LINKS.forEach(a=>{
+      const href = a.getAttribute('href')||'';
+      const match = href.startsWith('#/') && href.slice(2).split('#')[0]===name;
+      a.classList.toggle('active', match);
+    });
+  }
+  function showPage(name){
+    Object.entries(PAGES).forEach(([k,el])=> el.classList.toggle('active',k===name));
+    window.scrollTo({top:0,behavior:'auto'});
+    setActiveLink(name);
+    closeMenu(); // now safe
+  }
+  function parseRoute(){
+    const hash = location.hash || '#/home';
+    const name = hash.startsWith('#/') ? hash.slice(2).split('#')[0] : 'home';
+    PAGES[name] ? showPage(name) : showPage('home');
+  }
+  window.addEventListener('hashchange', parseRoute);
+  parseRoute();
 
-    // ESC key
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && mobileMenu.classList.contains('show')) hideMenu(); });
+  /* ====== Bind menu buttons ====== */
+  bottomToggle?.addEventListener('click', ()=> menu.classList.contains('d-none') ? openMenu() : closeMenu());
+  closeBtn?.addEventListener('click', closeMenu);
+  menu?.addEventListener('click', (e)=>{ if(e.target===menu) closeMenu(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !menu.classList.contains('d-none')) closeMenu(); });
 
-    // Popup video (opsional)
-    const overlay = document.getElementById('popupvid-adastra');
-    const video   = document.getElementById('popup-video-adastra');
-    const thumb   = document.querySelector('.thumbvid');
-    function openPopup(){ overlay.classList.add('show'); }
-    function closePopup(){ video.pause(); overlay.classList.remove('show'); }
-    if(thumb){ thumb.addEventListener('click', (e)=>{ e.preventDefault(); openPopup(); }); }
-    if(overlay){ overlay.addEventListener('click', closePopup); }
-    if(video){ video.addEventListener('click', e=>e.stopPropagation()); }
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && overlay && overlay.classList.contains('show')) closePopup(); });
+  /* ====== Delegate route clicks (also close menu) ====== */
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('[data-route]');
+    if(!a) return;
+    const href = a.getAttribute('href')||'';
+    if(href.startsWith('#/')) closeMenu();
   });
+
+  /* ====== Popup video ====== */
+  const popup = document.getElementById('popup');
+  const popupVideo = document.getElementById('popupVideo');
+  document.getElementById('heroThumb')?.addEventListener('click', ()=>{ popup.classList.remove('d-none'); });
+  popup?.addEventListener('click', ()=>{ popupVideo.pause(); popup.classList.add('d-none'); });
+
+  /* ====== FAQ toggles ====== */
+  document.querySelectorAll('.faq .item .q').forEach(q=>{
+    q.addEventListener('click', ()=> q.parentElement.classList.toggle('open'));
+  });
+});
 </script>
 </body>
 </html>
