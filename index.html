@@ -70,6 +70,27 @@
     .mobile_navigation .glass{backdrop-filter:blur(4px)}
     #bottomToggle{color:#fff}
     #bottomToggle.close-state{color:#fff!important}
+
+    /* ===== TEAM page ===== */
+    .team-grid{
+      display:grid; gap:28px;
+      grid-template-columns:1fr;
+    }
+    @media(min-width:576px){ .team-grid{ grid-template-columns:repeat(2,1fr);} }
+    @media(min-width:992px){ .team-grid{ grid-template-columns:repeat(4,1fr);} }
+
+    .team-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line); border-radius:var(--radius);
+      padding:16px; height:100%;
+    }
+    .team-photo{
+      width:100%; aspect-ratio: 4/5; object-fit:cover;
+      border-radius:12px; border:1px solid var(--line);
+      display:block; background:#111;
+    }
+    .team-name{ margin-top:12px; font-weight:600; }
+    .team-role{ color:var(--muted); font-size:.975rem; }
   </style>
 </head>
 <body>
@@ -93,6 +114,8 @@
         <a href="#/problem-solution" data-route>Problem &amp; Solution</a>
         <a href="#/roadmap" data-route>Roadmap</a>
         <a href="#/deliverables" data-route>Deliverables</a>
+        <!-- NEW: Team -->
+        <a href="#/team" data-route>Team</a>
         <a href="#/life-after" data-route>Life After</a>
         <a href="#/parents" data-route>Parents</a>
         <a href="#/contact" data-route>Enroll</a>
@@ -114,6 +137,8 @@
       <li class="py-2"><a class="d-block" href="#/problem-solution" data-route>Problem &amp; Solution</a></li>
       <li class="py-2"><a class="d-block" href="#/roadmap" data-route>Roadmap</a></li>
       <li class="py-2"><a class="d-block" href="#/deliverables" data-route>Deliverables</a></li>
+      <!-- NEW: Team -->
+      <li class="py-2"><a class="d-block" href="#/team" data-route>Team</a></li>
       <li class="py-2"><a class="d-block" href="#/life-after" data-route>Life After AD ASTRA</a></li>
       <li class="py-2"><a class="d-block" href="#/parents" data-route>Why Parents Love Us</a></li>
       <li class="py-2"><a class="d-block" href="#/contact" data-route>Enroll</a></li>
@@ -128,12 +153,10 @@
     <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-lg-6 order-2 order-lg-1">
-          <!-- <span class="border-soft rounded-pill px-3 py-1">Coding School for Future Tech Leaders</span> -->
           <h1 class="mt-3">Class of Tomorrow.</h1>
           <p class="lead" style="color:rgba(255,255,255,.78)">💻 Coding | 🤖 Robotics | 💬 AI<br>
           ↘️ The Next Tech Genius Starts Here_</p>
           <div class="d-flex flex-wrap mt-2">
-            <!-- <span class="border-soft rounded-pill px-3 py-1">Ages 4–18</span> -->
             <span class="border-soft rounded-pill mb-2 px-3 py-1">AI & Robotics</span>
             <span class="border-soft rounded-pill mb-2 px-3 py-1">Startup & entrepreneurship</span>
             <span class="border-soft rounded-pill mb-2 px-3 py-1">Project-Based</span>
@@ -249,6 +272,60 @@
     </div>
   </section>
 
+  <!-- ===== NEW: TEAM ===== -->
+  <section data-page="team" class="section">
+    <div class="container">
+      <h2 class="mb-1">Our Team</h2>
+      <p class="muted">The people behind AD ASTRA.</p>
+      <div class="rule"></div>
+
+      <div class="team-grid">
+        <!-- 1 -->
+        <article class="team-card">
+          <img src="team/i.JPG" alt="Risa" class="team-photo" loading="lazy">
+          <div class="team-name">Rivendi Al-isa N</div>
+          <div class="team-role">Lead Instructor</div>
+        </article>
+        <!-- 2 -->
+        <article class="team-card">
+          <img src="team/ii.JPG" alt="Faizan Chaudhary" class="team-photo" loading="lazy">
+          <div class="team-name">Faizan Chaudhary</div>
+          <div class="team-role">Senior Instructor</div>
+        </article>
+        <!-- 3 -->
+        <article class="team-card">
+          <img src="team/iii.JPG" alt="Fairuz" class="team-photo" loading="lazy">
+          <div class="team-name">Fairuz</div>
+          <div class="team-role">Instructor</div>
+        </article>
+        <!-- 4 -->
+        <article class="team-card">
+          <img src="team/iv.JPG" alt="Dr. MS Khan" class="team-photo" loading="lazy">
+          <div class="team-name">Dr. MS Khan</div>
+          <div class="team-role">Co-Founder</div>
+        </article>
+        <!-- 5 -->
+        <article class="team-card">
+          <img src="team/v.JPG" alt="Dilraj Rahal" class="team-photo" loading="lazy">
+          <div class="team-name">Dilraj Rahal</div>
+          <div class="team-role">Co-Founder</div>
+        </article>
+        <!-- 6 -->
+        <article class="team-card">
+          <img src="team/vi.JPG" alt="Zubyan Chaudhary" class="team-photo" loading="lazy">
+          <div class="team-name">Zubyan Chaudhary</div>
+          <div class="team-role">Co-Founder</div>
+        </article>
+        <!-- 7 -->
+        <article class="team-card">
+          <img src="team/vii.JPG" alt="Christy" class="team-photo" loading="lazy">
+          <div class="team-name">Christy</div>
+          <div class="team-role">Principal</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- LIFE AFTER -->
   <section data-page="life-after" class="section" style="background:#0b0b0b">
     <div class="container">
@@ -312,7 +389,7 @@
             </ul>
             <h6 class="mt-4">Contact Info</h6>
             <ul class="muted">
-              <li>Phone: 08</li>
+              <li>Phone: 0811 1333 870</li>
               <li>Website: www.adastracoding.com</li>
               <li>Instagram: @adastracoding</li>
             </ul>
@@ -359,6 +436,8 @@
           <li><a href="#/problem-solution" data-route>Problem &amp; Solution</a></li>
           <li><a href="#/roadmap" data-route>Roadmap</a></li>
           <li><a href="#/deliverables" data-route>Deliverables</a></li>
+          <!-- NEW: Team link -->
+          <li><a href="#/team" data-route>Team</a></li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -372,7 +451,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="fw-semibold mb-2">Contact</div>
         <ul class="list-unstyled m-0">
-          <li class="muted">Phone: 08</li>
+          <li class="muted">Phone: 0811 1333 870</li>
           <li><a href="#">www.adastracoding.com</a></li>
           <li><a href="#">@adastracoding</a></li>
         </ul>
