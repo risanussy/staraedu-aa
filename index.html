@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
   <style>
+
     /* Bootstrap via @import (CSS-only) */
     @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 
@@ -56,6 +57,9 @@
     [data-page]{display:none}
     [data-page].active{display:block}
     .section{padding:72px 0}
+    input::placeholder {
+      color: rgb(139, 139, 139) !important;
+    }
     @media(min-width:992px){.section{padding:96px 0}}
     .rule{height:1px;background:var(--line);margin:18px 0 26px}
 
@@ -465,39 +469,45 @@
 
         <!-- Instruksi & Form WA -->
         <div class="col-lg-7" id="contact-form">
-          <div class="glass p-3 mb-3">
-            <div class="fw-semibold">Terus form harus di tulis dengan info:</div>
-            <ul class="m-0 mt-2">
-              <li>Parent's Name</li>
-              <li>Child's Name</li>
-              <li>Child's Age</li>
-              <li>Phone Number</li>
-              <li>Inquiry</li>
-              <li>Send</li>
-            </ul>
-          </div>
+  <form class="row glass p-3 mb-3" id="waEnrollForm" autocomplete="on">
+    <div class="col-md-12">
+      <div class="mb-3">
+        <input type="text" class="form-control form-control-lg bg-dark text-white border-soft" 
+               name="parent_name" placeholder="Parent's Name*" required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <input type="text" class="form-control form-control-lg bg-dark text-white border-soft" 
+               name="child_name" placeholder="Child's Name*" required>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="mb-3">
+        <input type="text" inputmode="numeric" class="form-control form-control-lg bg-dark text-white border-soft" 
+               name="child_age" placeholder="Child's Age*" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="mb-3">
+        <input type="tel" class="form-control form-control-lg bg-dark text-white border-soft" 
+               name="phone" placeholder="Phone Number*" required>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="mb-3">
+        <textarea class="form-control bg-dark text-white border-soft" 
+                  name="inquiry" placeholder="Inquiry (optional)" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <button class="btn btn-outline-light" type="submit">
+        <span>Send</span>
+      </button>
+    </div>
+  </form>
+</div>
 
-          <form class="row" id="waEnrollForm" autocomplete="on">
-            <div class="col-md-12"><div class="mb-3">
-              <input type="text" class="form-control form-control-lg bg-dark text-white border-soft" name="parent_name" placeholder="Parent's Name*" required>
-            </div></div>
-            <div class="col-md-6"><div class="mb-3">
-              <input type="text" class="form-control form-control-lg bg-dark text-white border-soft" name="child_name" placeholder="Child's Name*" required>
-            </div></div>
-            <div class="col-md-6"><div class="mb-3">
-              <input type="text" inputmode="numeric" class="form-control form-control-lg bg-dark text-white border-soft" name="child_age" placeholder="Child's Age*" required>
-            </div></div>
-            <div class="col-md-12"><div class="mb-3">
-              <input type="tel" class="form-control form-control-lg bg-dark text-white border-soft" name="phone" placeholder="Phone Number*" required>
-            </div></div>
-            <div class="col-md-12"><div class="mb-3">
-              <textarea class="form-control bg-dark text-white border-soft" name="inquiry" placeholder="Inquiry (optional)" rows="5"></textarea>
-            </div></div>
-            <div class="col-md-12">
-              <button class="btn btn-outline-light" type="submit"><span>Send</span></button>
-            </div>
-          </form>
-        </div>
       </div>
     </div>
   </section>
