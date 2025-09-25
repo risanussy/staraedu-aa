@@ -13,4 +13,9 @@
   <priority>1.0</priority>
 </url>
 
+<url><loc>https://www.adastracoding.com/#/about</loc></url>
+<url><loc>https://www.adastracoding.com/#/problem-solution</loc></url>
+<url><loc>https://www.adastracoding.com/#/roadmap</loc></url>
+<url><loc>https://www.adastracoding.com/#/deliverables</loc></url>
+
 </urlset>
