@@ -8,6 +8,7 @@
   
   <link rel="canonical" href="https://adastracoding.com/">
   <link rel="icon" type="image/png" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
   
   <title>AD ASTRA – Coding School for Future Tech Leaders</title>
 
@@ -18,7 +19,7 @@
       "@id": "https://adastracoding.com/#organization",
       "name": "AD ASTRA",
       "url": "https://adastracoding.com",
-      "logo": "https://adastracoding.com/logo.png",
+      "logo": "https://adastracoding.com/src/assets/img/logo.png",
       "telephone": "+62-0811-1333-870",
       "address": {
         "@type": "PostalAddress",
@@ -78,7 +79,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/rivendi-al-isa.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/rivendi-al-isa.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -88,7 +89,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/faizan-chaudhary.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/faizan-chaudhary.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -98,7 +99,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/anisa-nurjanah.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/anisa-nurjanah.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -108,7 +109,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/fairuz-alkansyu.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/fairuz-alkansyu.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -118,7 +119,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/dr-ms-khan.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/dr-ms-khan.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -128,7 +129,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/dilraj-rahal.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/dilraj-rahal.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -138,7 +139,7 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/zubyan-chaudhary.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/zubyan-chaudhary.JPG",
           "url": "https://adastracoding.com/#/team"
         },
         {
@@ -148,131 +149,12 @@
           "worksFor": {
             "@id": "https://adastracoding.com/#organization"
           }
-          "image": "https://adastracoding.com/team/christiani-engelina-senduk.JPG",
+          "image": "https://adastracoding.com/src/assets/img/team/christiani-engelina-senduk.JPG",
           "url": "https://adastracoding.com/#/team"
         }
       ]
     }
   </script>
-
-  <style>
-
-    /* Bootstrap via @import (CSS-only) */
-    @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
-
-    :root{
-      --bg:#000; --fg:#fff; --fg-soft:rgba(255,255,255,.75);
-      --line:rgba(255,255,255,.12); --line-soft:rgba(255,255,255,.08);
-      --muted:rgba(255,255,255,.55); --radius:16px;
-      --bottom-bar-h:64px; /* tinggi bottom bar mobile */
-
-      /* Durasi transisi halaman */
-      --trans-duration: 420ms;
-      --trans-ease: cubic-bezier(.22,.61,.36,1);
-    }
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:var(--fg)}
-    a{color:#fff;text-decoration:none}
-    .border-soft{border:1px solid var(--line)}
-    .rounded-2xl{border-radius:1.25rem}
-    .muted{color:var(--muted)!important}
-
-    /* ==== Spacing agar konten tidak tertutup bottom bar (mobile) ==== */
-    @media (max-width:1199px){
-      body{ padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
-    }
-
-    /* HEADER (sticky + auto-hide) */
-    .header-sticky{position:sticky;top:0;z-index:1100;background:#000;
-      border-bottom:1px solid var(--line-soft);
-      transition:transform .28s ease, backdrop-filter .28s ease;
-      backdrop-filter:saturate(120%) blur(6px)}
-    .header-hidden{transform:translateY(-100%)}
-    .brand img{height:72px}
-    @media(min-width:1200px){.brand img{height:86px}}
-
-    /* Nav rapi */
-    .main-nav{display:flex;gap:22px;align-items:center;justify-content:center}
-    .main-nav a{position:relative;padding:.35rem .25rem;font-weight:500;white-space:nowrap;opacity:.95}
-    .main-nav a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:#fff;transform:scaleX(0);transform-origin:left;transition:transform .22s ease}
-    .main-nav a:hover::after{transform:scaleX(1)}
-    .main-nav a.active{opacity:1}
-    .main-nav a.active::after{transform:scaleX(1)}
-
-    /* Cards & sections */
-    .glass{background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid var(--line);border-radius:var(--radius);backdrop-filter:blur(4px)}
-    [data-page]{display:none}
-    [data-page].active{display:block}
-    .section{padding:72px 0}
-    input::placeholder {
-      color: rgb(139, 139, 139) !important;
-    }
-    @media(min-width:992px){.section{padding:96px 0}}
-    .rule{height:1px;background:var(--line);margin:18px 0 26px}
-
-    .thumbvid{display:flex;align-items:center;justify-content:center;width:480px;height:480px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
-    @media (max-width:576px){.thumbvid{width:500px;height:300px}}
-
-    .stat{border:1px solid var(--line);border-radius:14px;padding:16px 18px;text-align:center}
-    .grid-3{display:grid;gap:18px} @media(min-width:992px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-    .grid-2{display:grid;gap:18px} @media(min-width:992px){.grid-2{grid-template-columns:repeat(2,1fr)}}
-
-    .timeline{position:relative;padding-left:34px}
-    .timeline-item{position:relative;margin-bottom:20px}
-    .timeline-item .dot{position:absolute;left:-20px;top:6px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.13)}
-
-    /* FAQ */
-    .faq .item{border-bottom:1px solid var(--line-soft);padding:14px 0}
-    .faq .q{display:flex;justify-content:space-between;gap:10px;cursor:pointer}
-    .faq .a{display:none;padding-top:8px;color:rgba(255,255,255,.78)}
-    .faq .item.open .a{display:block}
-
-    /* ===== TEAM page ===== */
-    .team-grid{ display:grid; gap:28px; grid-template-columns:1fr; }
-    @media(min-width:576px){ .team-grid{ grid-template-columns:repeat(2,1fr);} }
-    @media(min-width:992px){ .team-grid{ grid-template-columns:repeat(4,1fr);} }
-    .team-card{ background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid var(--line); border-radius:var(--radius); padding:16px; height:100%; }
-    .team-photo{ width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius:12px; border:1px solid var(--line); display:block; background:#111; }
-    .team-name{ margin-top:12px; font-weight:600; }
-    .team-role{ color:var(--muted); font-size:.975rem; }
-
-    /* Bottom bar mobile */
-    .mobile_navigation .glass{backdrop-filter:blur(4px)}
-    .cta-green{
-      background-image: linear-gradient(90deg, #d8ea7b, #4aae66);
-      color:#0b2a13; font-weight:700;
-    }
-
-    /* Home quick-purpose list */
-    .home-purpose li {margin-bottom:10px}
-    .link-learn {opacity:.85; text-decoration:underline; margin-left:.35rem;}
-    .link-learn:hover {opacity:1}
-
-    /* ========== PAGE TRANSITION OVERLAY ========== */
-    .page-transition {
-      position: fixed;
-      inset: 0;
-      z-index: 1400; /* di atas header & popup menu */
-      pointer-events: none;
-      transform: scaleY(0);
-      transform-origin: top;
-      transition: transform var(--trans-duration) var(--trans-ease);
-      /* default black */
-      background: #000;
-    }
-    .page-transition.is-white { background: #fff; }
-    /* Saat menutup (cover) */
-    .page-transition.cover { transform: scaleY(1); transform-origin: top; }
-    /* Saat membuka (uncover) — berawal dari origin bottom */
-    .page-transition.uncover { transform: scaleY(0); transform-origin: bottom; }
-
-    /* Reduced motion: matikan animasi agar aksesibel */
-    @media (prefers-reduced-motion: reduce) {
-      .page-transition { transition: none !important; }
-    }
-  </style>
 </head>
 <body>
 <!-- PAGE TRANSITION OVERLAY -->
@@ -288,7 +170,7 @@
   <div class="container">
     <div class="d-flex align-items-center justify-content-center justify-content-xl-between py-2">
       <a class="brand d-inline-flex align-items-center" href="#/home" data-route aria-label="AD ASTRA Home">
-        <img src="logo.png" alt="AD ASTRA" />
+        <img src="src/assets/img/logo.png" alt="Logo AD ASTRA" />
       </a>
       <nav class="d-none d-xl-flex main-nav" aria-label="Primary">
         <!-- tambahkan data-trans="white" jika mau transisi putih untuk link tertentu -->
@@ -309,7 +191,7 @@
 <div class="popup-mobile-menu d-xl-none d-none position-fixed top-0 start-0 w-100 h-100" id="mobileMenu" style="background:rgba(0,0,0,.96);z-index:1190">
   <div class="inner" style="max-width:520px;margin:0 auto;padding:22px">
     <div class="d-flex justify-content-between align-items-center">
-      <a href="#/home" data-route><img src="logo.png" alt="Logo" style="height:64px"></a>
+      <a href="#/home" data-route><img src="src/assets/img/logo.png" alt="Logo AD ASTRA" style="height:64px"></a>
       <button class="btn btn-outline-light btn-sm" id="closeMenu" aria-label="Close menu">✕ Close</button>
     </div>
     <div class="rule"></div>
@@ -455,7 +337,7 @@
   <section data-page="roadmap" class="section" style="background:#0b0b0b">
     <div class="container">
       <div class="row g-5 align-items-center">
-        <div class="col-lg-5"><img src="pic-2.jpg" class="img-fluid rounded-2xl border-soft" alt="Roadmap"></div>
+        <div class="col-lg-5"><img src="src/assets/img/pic-2.jpg" class="img-fluid rounded-2xl border-soft" alt="Roadmap"></div>
         <div class="col-lg-7">
           <h2 class="mb-1">Roadmap</h2>
           <p class="muted">High-level journey from first lines of code to public demo day.</p>
@@ -493,7 +375,7 @@
             </ol>
           </div>
         </div>
-        <div class="col-lg-6"><img src="pic-1.jpg" class="img-fluid rounded-2xl border-soft" alt="Deliverables"></div>
+        <div class="col-lg-6"><img src="src/assets/img/pic-1.jpg" class="img-fluid rounded-2xl border-soft" alt="Deliverables"></div>
       </div>
     </div>
   </section>
@@ -507,42 +389,42 @@
 
       <div class="team-grid">
         <article id="rivendi-al-isa" class="team-card">
-          <img src="team/rivendi-al-isa.JPG" alt="Rivendi Al-isa N, Chief Technology Officer at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/rivendi-al-isa.JPG" alt="Rivendi Al-isa N, Chief Technology Officer at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Rivendi Al-isa N</div>
           <div class="team-role">Chief Technology Officer</div>
         </article>
         <article id="faizan-chaudhary" class="team-card">
-          <img src="team/faizan-chaudhary.JPG" alt="Faizan Chaudhary, Senior Instructor at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/faizan-chaudhary.JPG" alt="Faizan Chaudhary, Senior Instructor at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Faizan Chaudhary</div>
           <div class="team-role">Senior Instructor</div>
         </article>
         <article id="anisa-nurjanah" class="team-card">
-          <img src="team/anisa-nurjanah.JPG" alt="Anisa Nurjanah, Instructor at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/anisa-nurjanah.JPG" alt="Anisa Nurjanah, Instructor at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Anisa Nurjanah</div>
           <div class="team-role">Instructor</div>
         </article>
         <article id="fairuz-alkansyu" class="team-card">
-          <img src="team/fairuz-alkansyu.JPG" alt="Fairuz Alkansyu, Instructor at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/fairuz-alkansyu.JPG" alt="Fairuz Alkansyu, Instructor at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Fairuz Alkansyu</div>
           <div class="team-role">Instructor</div>
         </article>
         <article id="dr-ms-khan" class="team-card">
-          <img src="team/dr-ms-khan.JPG" alt="Dr. MS Khan, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/dr-ms-khan.JPG" alt="Dr. MS Khan, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Dr. MS Khan</div>
           <div class="team-role">Co-Founder</div>
         </article>
         <article id="dilraj-rahal" class="team-card">
-          <img src="team/dilraj-rahal.JPG" alt="Dilraj Rahal, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/dilraj-rahal.JPG" alt="Dilraj Rahal, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Dilraj Rahal</div>
           <div class="team-role">Co-Founder</div>
         </article>
         <article id="zubyan-chaudhary" class="team-card">
-          <img src="team/zubyan-chaudhary.JPG" alt="Zubyan Chaudhary, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/zubyan-chaudhary.JPG" alt="Zubyan Chaudhary, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Zubyan Chaudhary</div>
           <div class="team-role">Co-Founder</div>
         </article>
         <article id="christiani-engelina-senduk" class="team-card">
-          <img src="team/christiani-engelina-senduk.JPG" alt="Christiani Engelina Senduk, Principal at AD ASTRA" class="team-photo" loading="lazy" />
+          <img src="src/assets/img/team/christiani-engelina-senduk.JPG" alt="Christiani Engelina Senduk, Principal at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Christiani Engelina Senduk</div>
           <div class="team-role">Principal</div>
         </article>
@@ -688,7 +570,7 @@
   <div class="container">
     <div class="row g-4">
       <div class="col-lg-3 col-md-6">
-        <a href="#/home" data-route><img src="logo.png" alt="Logo" style="height:110px"></a>
+        <a href="#/home" data-route><img src="src/assets/img/logo.png" alt="Logo AD ASTRA" style="height:110px"></a>
         <p class="mt-2 muted">Coding, AI, and robotics through hands-on, project-based learning.</p>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -723,6 +605,9 @@
     </div>
   </div>
 </footer>
+
+<div id="app"></div>
+<script src="src/main.js"></script>
 
 <!-- JS -->
 <script>

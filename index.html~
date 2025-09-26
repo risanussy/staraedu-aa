@@ -3,11 +3,160 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>AD ASTRA – Coding School for Future Tech Leaders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="AD ASTRA is a future-oriented coding & innovation academy for ages 4–18: hands-on coding, AI, robotics, product creation, and entrepreneurship." />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <link rel="canonical" href="https://adastracoding.com/">
+  <link rel="icon" type="image/png" href="favicon.ico" />
+  
+  <title>AD ASTRA – Coding School for Future Tech Leaders</title>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": "https://adastracoding.com/#organization",
+      "name": "AD ASTRA",
+      "url": "https://adastracoding.com",
+      "logo": "https://adastracoding.com/logo.png",
+      "telephone": "+62-0811-1333-870",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Jl. RS. Fatmawati Raya No.9, RT.1/RW.3, Cilandak Bar., Kec. Cilandak, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 10240",
+        "addressLocality": "Jakarta Selatan",
+        "postalCode": "10240",
+        "addressCountry": "ID"
+      },
+      "sameAs": [
+        "https://www.instagram.com/adastracoding"
+      ],
+      "openingHours": "Mo-Fr 10:00-18:00"
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Purpose",
+          "url": "https://www.adastracoding.com/#/about"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Problem & Solution",
+          "url": "https://www.adastracoding.com/#/problem-solution"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Roadmap",
+          "url": "https://www.adastracoding.com/#/roadmap"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Deliverables",
+          "url": "https://www.adastracoding.com/#/deliverables"
+        }
+      ]
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Rivendi Al-isa N",
+          "jobTitle": "Chief Technology Officer",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/rivendi-al-isa.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Faizan Chaudhary",
+          "jobTitle": "Senior Instructor",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/faizan-chaudhary.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Anisa Nurjanah",
+          "jobTitle": "Instructor",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/anisa-nurjanah.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Fairuz Alkansyu",
+          "jobTitle": "Instructor",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/fairuz-alkansyu.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Dr. MS Khan",
+          "jobTitle": "Co-Founder",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/dr-ms-khan.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Dilraj Rahal",
+          "jobTitle": "Co-Founder",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/dilraj-rahal.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Zubyan Chaudhary",
+          "jobTitle": "Co-Founder",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/zubyan-chaudhary.JPG",
+          "url": "https://adastracoding.com/#/team"
+        },
+        {
+          "@type": "Person",
+          "name": "Christiani Engelina Senduk",
+          "jobTitle": "Principal",
+          "worksFor": {
+            "@id": "https://adastracoding.com/#organization"
+          }
+          "image": "https://adastracoding.com/team/christiani-engelina-senduk.JPG",
+          "url": "https://adastracoding.com/#/team"
+        }
+      ]
+    }
+  </script>
 
   <style>
+
     /* Bootstrap via @import (CSS-only) */
     @import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css');
 
@@ -15,6 +164,11 @@
       --bg:#000; --fg:#fff; --fg-soft:rgba(255,255,255,.75);
       --line:rgba(255,255,255,.12); --line-soft:rgba(255,255,255,.08);
       --muted:rgba(255,255,255,.55); --radius:16px;
+      --bottom-bar-h:64px; /* tinggi bottom bar mobile */
+
+      /* Durasi transisi halaman */
+      --trans-duration: 420ms;
+      --trans-ease: cubic-bezier(.22,.61,.36,1);
     }
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--fg)}
@@ -22,6 +176,11 @@
     .border-soft{border:1px solid var(--line)}
     .rounded-2xl{border-radius:1.25rem}
     .muted{color:var(--muted)!important}
+
+    /* ==== Spacing agar konten tidak tertutup bottom bar (mobile) ==== */
+    @media (max-width:1199px){
+      body{ padding-bottom: calc(var(--bottom-bar-h) + env(safe-area-inset-bottom, 0px) + 12px); }
+    }
 
     /* HEADER (sticky + auto-hide) */
     .header-sticky{position:sticky;top:0;z-index:1100;background:#000;
@@ -46,6 +205,9 @@
     [data-page]{display:none}
     [data-page].active{display:block}
     .section{padding:72px 0}
+    input::placeholder {
+      color: rgb(139, 139, 139) !important;
+    }
     @media(min-width:992px){.section{padding:96px 0}}
     .rule{height:1px;background:var(--line);margin:18px 0 26px}
 
@@ -66,34 +228,55 @@
     .faq .a{display:none;padding-top:8px;color:rgba(255,255,255,.78)}
     .faq .item.open .a{display:block}
 
-    /* Bottom bar */
-    .mobile_navigation .glass{backdrop-filter:blur(4px)}
-    #bottomToggle{color:#fff}
-    #bottomToggle.close-state{color:#fff!important}
-
     /* ===== TEAM page ===== */
-    .team-grid{
-      display:grid; gap:28px;
-      grid-template-columns:1fr;
-    }
+    .team-grid{ display:grid; gap:28px; grid-template-columns:1fr; }
     @media(min-width:576px){ .team-grid{ grid-template-columns:repeat(2,1fr);} }
     @media(min-width:992px){ .team-grid{ grid-template-columns:repeat(4,1fr);} }
-
-    .team-card{
-      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-      border:1px solid var(--line); border-radius:var(--radius);
-      padding:16px; height:100%;
-    }
-    .team-photo{
-      width:100%; aspect-ratio: 4/5; object-fit:cover;
-      border-radius:12px; border:1px solid var(--line);
-      display:block; background:#111;
-    }
+    .team-card{ background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line); border-radius:var(--radius); padding:16px; height:100%; }
+    .team-photo{ width:100%; aspect-ratio: 4/5; object-fit:cover; border-radius:12px; border:1px solid var(--line); display:block; background:#111; }
     .team-name{ margin-top:12px; font-weight:600; }
     .team-role{ color:var(--muted); font-size:.975rem; }
+
+    /* Bottom bar mobile */
+    .mobile_navigation .glass{backdrop-filter:blur(4px)}
+    .cta-green{
+      background-image: linear-gradient(90deg, #d8ea7b, #4aae66);
+      color:#0b2a13; font-weight:700;
+    }
+
+    /* Home quick-purpose list */
+    .home-purpose li {margin-bottom:10px}
+    .link-learn {opacity:.85; text-decoration:underline; margin-left:.35rem;}
+    .link-learn:hover {opacity:1}
+
+    /* ========== PAGE TRANSITION OVERLAY ========== */
+    .page-transition {
+      position: fixed;
+      inset: 0;
+      z-index: 1400; /* di atas header & popup menu */
+      pointer-events: none;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform var(--trans-duration) var(--trans-ease);
+      /* default black */
+      background: #000;
+    }
+    .page-transition.is-white { background: #fff; }
+    /* Saat menutup (cover) */
+    .page-transition.cover { transform: scaleY(1); transform-origin: top; }
+    /* Saat membuka (uncover) — berawal dari origin bottom */
+    .page-transition.uncover { transform: scaleY(0); transform-origin: bottom; }
+
+    /* Reduced motion: matikan animasi agar aksesibel */
+    @media (prefers-reduced-motion: reduce) {
+      .page-transition { transition: none !important; }
+    }
   </style>
 </head>
 <body>
+<!-- PAGE TRANSITION OVERLAY -->
+<div id="pageTrans" class="page-transition" aria-hidden="true"></div>
 
 <!-- POPUP VIDEO -->
 <div id="popup" class="position-fixed top-0 start-0 w-100 h-100 d-none" style="background:rgba(0,0,0,.85);z-index:1200;align-items:center;justify-content:center">
@@ -101,24 +284,22 @@
 </div>
 
 <!-- HEADER -->
-<header id="appHeader" class="header-sticky">
+<header id="appHeader" class="header-sticky" role="banner">
   <div class="container">
-    <!-- CENTER logo on mobile, spread on desktop -->
     <div class="d-flex align-items-center justify-content-center justify-content-xl-between py-2">
-      <a class="brand d-inline-flex align-items-center" href="#/home" data-route>
+      <a class="brand d-inline-flex align-items-center" href="#/home" data-route aria-label="AD ASTRA Home">
         <img src="logo.png" alt="AD ASTRA" />
       </a>
-      <!-- Desktop Nav -->
-      <nav class="d-none d-xl-flex main-nav">
+      <nav class="d-none d-xl-flex main-nav" aria-label="Primary">
+        <!-- tambahkan data-trans="white" jika mau transisi putih untuk link tertentu -->
         <a href="#/about" data-route>Purpose</a>
         <a href="#/problem-solution" data-route>Problem &amp; Solution</a>
-        <a href="#/roadmap" data-route>Roadmap</a>
+        <a href="#/roadmap" data-route data-trans="white">Roadmap</a>
         <a href="#/deliverables" data-route>Deliverables</a>
-        <!-- NEW: Team -->
-        <a href="#/team" data-route>Team</a>
+        <a href="#/team" data-route data-trans="white">Team</a>
         <a href="#/life-after" data-route>Life After</a>
         <a href="#/parents" data-route>Parents</a>
-        <a href="#/contact" data-route>Enroll</a>
+        <a href="#/contact" data-route data-trans="white">Enroll</a>
       </nav>
     </div>
   </div>
@@ -129,31 +310,30 @@
   <div class="inner" style="max-width:520px;margin:0 auto;padding:22px">
     <div class="d-flex justify-content-between align-items-center">
       <a href="#/home" data-route><img src="logo.png" alt="Logo" style="height:64px"></a>
-      <button class="btn btn-outline-light btn-sm" id="closeMenu">✕ Close</button>
+      <button class="btn btn-outline-light btn-sm" id="closeMenu" aria-label="Close menu">✕ Close</button>
     </div>
     <div class="rule"></div>
     <ul class="list-unstyled m-0">
       <li class="py-2"><a class="d-block" href="#/about" data-route>Purpose</a></li>
       <li class="py-2"><a class="d-block" href="#/problem-solution" data-route>Problem &amp; Solution</a></li>
-      <li class="py-2"><a class="d-block" href="#/roadmap" data-route>Roadmap</a></li>
+      <li class="py-2"><a class="d-block" href="#/roadmap" data-route data-trans="white">Roadmap</a></li>
       <li class="py-2"><a class="d-block" href="#/deliverables" data-route>Deliverables</a></li>
-      <!-- NEW: Team -->
-      <li class="py-2"><a class="d-block" href="#/team" data-route>Team</a></li>
+      <li class="py-2"><a class="d-block" href="#/team" data-route data-trans="white">Team</a></li>
       <li class="py-2"><a class="d-block" href="#/life-after" data-route>Life After AD ASTRA</a></li>
       <li class="py-2"><a class="d-block" href="#/parents" data-route>Why Parents Love Us</a></li>
-      <li class="py-2"><a class="d-block" href="#/contact" data-route>Enroll</a></li>
+      <li class="py-2"><a class="d-block" href="#/contact" data-route data-trans="white">Enroll</a></li>
     </ul>
   </div>
 </div>
 
 <!-- PAGES -->
 <main id="app">
-  <!-- HOME -->
+  <!-- ======= HOME (… konten kamu tetap sama) ======= -->
   <section data-page="home" class="section active">
     <div class="container">
       <div class="row g-5 align-items-center">
         <div class="col-lg-6 order-2 order-lg-1">
-          <h1 class="mt-3">Class of Tomorrow.</h1>
+          <h1 class="mt-3">AD ASTRA - Class of Tomorrow.</h1>
           <p class="lead" style="color:rgba(255,255,255,.78)">💻 Coding | 🤖 Robotics | 💬 AI<br>
           ↘️ The Next Tech Genius Starts Here_</p>
           <div class="d-flex flex-wrap mt-2">
@@ -162,9 +342,45 @@
             <span class="border-soft rounded-pill mb-2 px-3 py-1">Project-Based</span>
             <span class="border-soft rounded-pill mb-2 px-3 py-1">Portfolio & POC</span>
           </div>
-          <div class="mt-4 d-flex gap-2 justify-content-center justify-content-xl-between">
-            <a href="#/contact" data-route class="btn btn-outline-light btn-lg">🚀 Enroll Now</a>
+
+          <div class="mt-3 d-flex gap-2 flex-wrap">
+            <a href="#/contact" data-route class="btn btn-outline-light btn-lg m-auto" data-trans="white">🚀 Enroll Now</a>
           </div>
+          <br><br><br>
+
+          <div class="mt-4">
+            <h6 class="eyebrow mb-2">At a Glance</h6>
+            <div class="home-grid">
+              <article class="home-card">
+                <h5 class="mb-1">Purpose</h5>
+                <ul class="dotlist">
+                  <li>Raise future tech entrepreneurs</li>
+                  <li>Ship real projects & portfolios</li>
+                  <li>Certification-ready outcomes</li>
+                </ul>
+                <a href="#/about" class="link-learn" data-route>learn more →</a>
+              </article><hr>
+              <article class="home-card">
+                <h5 class="mb-1">Deliverables</h5>
+                <ul class="dotlist">
+                  <li>Full-Stack Developer certificate</li>
+                  <li>Startup POC (pitch & demo)</li>
+                  <li>Hands-on AI & Robotics labs</li>
+                </ul>
+                <a href="#/deliverables" class="link-learn" data-route>learn more →</a>
+              </article><hr>
+              <article class="home-card">
+                <h5 class="mb-1">Curriculum & Roadmap</h5>
+                <ul class="dotlist">
+                  <li>Tracks ages 4–18 (Foundations → Startup)</li>
+                  <li>Web, Data/AI, Robotics studios</li>
+                  <li>Demo Day & portfolio pathway</li>
+                </ul>
+                <a href="#/roadmap" class="link-learn" data-route data-trans="white">learn more →</a>
+              </article>
+            </div>
+          </div>
+
         </div>
         <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center">
           <div class="thumbvid" id="heroThumb" style="cursor:pointer" title="Play video">
@@ -182,7 +398,7 @@
     </div>
   </section>
 
-  <!-- PURPOSE -->
+  <!-- ======= ABOUT / PURPOSE (… tetap) ======= -->
   <section data-page="about" class="section" style="background:#0b0b0b">
     <div class="container">
       <h2 class="mb-1">Purpose</h2>
@@ -190,13 +406,13 @@
       <div class="rule"></div>
 
       <div class="grid-3">
-        <article class="glass p-4"><h5>Enter Top Global Universities with a Strong POC</h5><p class="mt-2 muted">Students craft Proof-of-Concepts and polished portfolios—evidence that elevates applications.</p></article>
-        <article class="glass p-4"><h5>Work Anywhere with Industry-Ready Skills</h5><p class="mt-2 muted">Full-stack fundamentals, version control, deployment, team practices.</p></article>
-        <article class="glass p-4"><h5>Become Entrepreneurs & Build Startups</h5><p class="mt-2 muted">From idea to MVP: validate problems, ship, pitch, launch.</p></article>
+        <article id="raise" class="glass p-4"><h5>Raise Future Tech Entrepreneurs</h5><p class="mt-2 muted">Students craft Proof-of-Concepts and polished portfolios—evidence that elevates applications.</p></article>
+        <article id="build" class="glass p-4"><h5>Build Startups that Strengthen University Applications</h5><p class="mt-2 muted">From idea to MVP: validate problems, ship, pitch, launch.</p></article>
+        <article id="graduate" class="glass p-4"><h5>Graduate as Certified Full-Stack Developers, Ready for the Workforce</h5><p class="mt-2 muted">Full-stack fundamentals, version control, deployment, team practices.</p></article>
       </div>
 
       <h5 class="mt-5">Curriculum Tracks</h5>
-      <div class="grid-3 mt-2">
+      <div class="grid-3 mt-4">
         <div class="glass p-3"><strong>Foundations (4–8)</strong><div class="muted mt-1">Logic, creative making, unplugged & block coding</div></div>
         <div class="glass p-3"><strong>Web & Games (9–12)</strong><div class="muted mt-1">HTML/CSS/JS, simple games, intro hardware</div></div>
         <div class="glass p-3"><strong>Full-Stack & Data (13–15)</strong><div class="muted mt-1">APIs, DB, AI labs</div></div>
@@ -207,9 +423,13 @@
     </div>
   </section>
 
-  <!-- PROBLEM & SOLUTION -->
+  <!-- ======= PROBLEM & SOLUTION (… tetap) ======= -->
   <section data-page="problem-solution" class="section">
     <div class="container">
+      <h2 class="mb-1">Problem and Solution</h2>
+      <p class="muted">Kids struggle with understanding the basics of programming — we make it simple with interactive, project-based learning.</p>
+      <div class="rule"></div>
+
       <div class="grid-2">
         <div class="glass p-4">
           <h4>Problem We Solve</h4>
@@ -231,7 +451,7 @@
     </div>
   </section>
 
-  <!-- ROADMAP -->
+  <!-- ======= ROADMAP (… tetap) ======= -->
   <section data-page="roadmap" class="section" style="background:#0b0b0b">
     <div class="container">
       <div class="row g-5 align-items-center">
@@ -239,25 +459,31 @@
         <div class="col-lg-7">
           <h2 class="mb-1">Roadmap</h2>
           <p class="muted">High-level journey from first lines of code to public demo day.</p>
+          <div class="rule"></div>
+
           <div class="timeline mt-3">
             <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Discover Foundations (Ages 4–8)</h6><p class="mb-2 muted">Logic, creative making, unplugged & block coding.</p></div>
             <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Build Projects (Ages 9–12)</h6><p class="mb-2 muted">Web apps, simple games, intro to hardware.</p></div>
             <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Ship Products (Ages 13–15)</h6><p class="mb-2 muted">Full-stack paths, APIs, data & AI labs.</p></div>
             <div class="timeline-item"><span class="dot"></span><h6 class="mb-1">Pitch & Portfolio (Ages 16–18)</h6><p class="mb-0 muted">Demo Day, startup POC, certification.</p></div>
           </div>
-          <div class="mt-3"><a href="#/contact" data-route class="btn btn-outline-light">🏁 Join Next Intake</a></div>
+          <div class="mt-3">
+            <a href="#" class="btn btn-outline-light" data-wa data-wa-label="Join Next Intake">🏁 Join Next Intake</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- DELIVERABLES -->
+  <!-- ======= DELIVERABLES (… tetap) ======= -->
   <section data-page="deliverables" class="section">
     <div class="container">
       <div class="row g-5">
         <div class="col-lg-6">
           <h2 class="mb-1">Real Deliverables</h2>
           <p class="muted">What every graduate takes home.</p>
+          <div class="rule"></div>
+
           <div class="glass p-4 mt-3">
             <h5 class="mb-3">Delivered</h5>
             <ol class="mt-2">
@@ -272,7 +498,7 @@
     </div>
   </section>
 
-  <!-- ===== NEW: TEAM ===== -->
+  <!-- ======= TEAM (… tetap) ======= -->
   <section data-page="team" class="section">
     <div class="container">
       <h2 class="mb-1">Our Team</h2>
@@ -280,62 +506,57 @@
       <div class="rule"></div>
 
       <div class="team-grid">
-        <!-- 1 -->
-        <article class="team-card">
-          <img src="team/i.JPG" alt="Risa" class="team-photo" loading="lazy">
+        <article id="rivendi-al-isa" class="team-card">
+          <img src="team/rivendi-al-isa.JPG" alt="Rivendi Al-isa N, Chief Technology Officer at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Rivendi Al-isa N</div>
-          <div class="team-role">Lead Instructor</div>
+          <div class="team-role">Chief Technology Officer</div>
         </article>
-        <!-- 2 -->
-        <article class="team-card">
-          <img src="team/ii.JPG" alt="Faizan Chaudhary" class="team-photo" loading="lazy">
+        <article id="faizan-chaudhary" class="team-card">
+          <img src="team/faizan-chaudhary.JPG" alt="Faizan Chaudhary, Senior Instructor at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Faizan Chaudhary</div>
           <div class="team-role">Senior Instructor</div>
         </article>
-        <!-- 3 -->
-        <article class="team-card">
-          <img src="team/iii.JPG" alt="Fairuz" class="team-photo" loading="lazy">
-          <div class="team-name">Fairuz</div>
+        <article id="anisa-nurjanah" class="team-card">
+          <img src="team/anisa-nurjanah.JPG" alt="Anisa Nurjanah, Instructor at AD ASTRA" class="team-photo" loading="lazy" />
+          <div class="team-name">Anisa Nurjanah</div>
           <div class="team-role">Instructor</div>
         </article>
-        <!-- 4 -->
-        <article class="team-card">
-          <img src="team/iv.JPG" alt="Dr. MS Khan" class="team-photo" loading="lazy">
+        <article id="fairuz-alkansyu" class="team-card">
+          <img src="team/fairuz-alkansyu.JPG" alt="Fairuz Alkansyu, Instructor at AD ASTRA" class="team-photo" loading="lazy" />
+          <div class="team-name">Fairuz Alkansyu</div>
+          <div class="team-role">Instructor</div>
+        </article>
+        <article id="dr-ms-khan" class="team-card">
+          <img src="team/dr-ms-khan.JPG" alt="Dr. MS Khan, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Dr. MS Khan</div>
           <div class="team-role">Co-Founder</div>
         </article>
-        <!-- 5 -->
-        <article class="team-card">
-          <img src="team/v.JPG" alt="Dilraj Rahal" class="team-photo" loading="lazy">
+        <article id="dilraj-rahal" class="team-card">
+          <img src="team/dilraj-rahal.JPG" alt="Dilraj Rahal, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Dilraj Rahal</div>
           <div class="team-role">Co-Founder</div>
         </article>
-        <!-- 6 -->
-        <article class="team-card">
-          <img src="team/vi.JPG" alt="Zubyan Chaudhary" class="team-photo" loading="lazy">
+        <article id="zubyan-chaudhary" class="team-card">
+          <img src="team/zubyan-chaudhary.JPG" alt="Zubyan Chaudhary, Co-Founder at AD ASTRA" class="team-photo" loading="lazy" />
           <div class="team-name">Zubyan Chaudhary</div>
           <div class="team-role">Co-Founder</div>
         </article>
-        <!-- 7 -->
-        <article class="team-card">
-          <img src="team/vii.JPG" alt="Christy" class="team-photo" loading="lazy">
-          <div class="team-name">Christy</div>
+        <article id="christiani-engelina-senduk" class="team-card">
+          <img src="team/christiani-engelina-senduk.JPG" alt="Christiani Engelina Senduk, Principal at AD ASTRA" class="team-photo" loading="lazy" />
+          <div class="team-name">Christiani Engelina Senduk</div>
           <div class="team-role">Principal</div>
-        </article>
-        <article class="team-card">
-          <img src="team/viii.jpg" alt="Christy" class="team-photo" loading="lazy">
-          <div class="team-name">Putri</div>
-          <div class="team-role">Vice Principal</div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- LIFE AFTER -->
+  <!-- ======= LIFE AFTER (… tetap) ======= -->
   <section data-page="life-after" class="section" style="background:#0b0b0b">
     <div class="container">
       <h2 class="mb-1">Life After AD ASTRA</h2>
       <p class="muted">What’s Next? Anything They Dream Of.</p>
+      <div class="rule"></div>
+
       <div class="row g-4 mt-1">
         <div class="col-md-6"><div class="glass p-4 h-100"><h6>University & Career</h6><ul class="mt-2 muted"><li>Apply to top global universities using startup POC & credentials.</li><li>Work remotely as a freelance developer with certification.</li></ul></div></div>
         <div class="col-md-6"><div class="glass p-4 h-100"><h6>Startup & Growth</h6><ul class="mt-2 muted"><li>Start a business, pitch to real investors, and scale ideas.</li><li>Join the global tech workforce even before finishing college.</li></ul></div></div>
@@ -343,11 +564,13 @@
     </div>
   </section>
 
-  <!-- PARENTS -->
+  <!-- ======= PARENTS (… tetap) ======= -->
   <section data-page="parents" class="section">
     <div class="container">
       <h2 class="mb-1">Why Parents Love Us</h2>
       <p class="muted">Not Just Learning. Life-Changing Growth.</p>
+      <div class="rule"></div>
+
       <div class="row g-4">
         <div class="col-md-6 col-lg-3"><div class="glass p-4 h-100"><h6 class="mb-2">Safe & Structured</h6><p class="m-0 muted">Personalized learning with clear pathways.</p></div></div>
         <div class="col-md-6 col-lg-3"><div class="glass p-4 h-100"><h6 class="mb-2">Teamwork & Empathy</h6><p class="m-0 muted">Group projects build communication.</p></div></div>
@@ -374,13 +597,14 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ======= CONTACT / ENROLL (… tetap) ======= -->
   <section data-page="contact" class="section" style="background:#0b0b0b">
     <div class="container">
       <div class="text-center">
         <span class="muted d-block">Enroll Now</span>
         <h2 class="mt-1">Ready to Future-Proof Your Child?</h2>
         <p class="muted">Monthly intakes • Weekend open houses • Scholarships & trials</p>
+        <div class="rule"></div>
       </div>
 
       <div class="row g-4 mt-2">
@@ -398,17 +622,50 @@
               <li>Website: www.adastracoding.com</li>
               <li>Instagram: @adastracoding</li>
             </ul>
-            <div class="mt-3"><a href="#/contact#contact-form" data-route class="btn btn-outline-light">💬 Chat Admissions</a></div>
+            <div class="mt-3">
+              <a href="#" class="btn btn-outline-light" data-wa data-wa-label="Chat Admissions">💬 Chat Admissions</a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-7">
-          <form class="row" id="contact-form">
-            <div class="col-md-6"><div class="mb-3"><input type="text" class="form-control form-control-lg bg-dark text-white border-soft" name="name" placeholder="First name*"></div></div>
-            <div class="col-md-6"><div class="mb-3"><input type="text" class="form-control form-control-lg bg-dark text-white border-soft" name="lastname" placeholder="Last name*"></div></div>
-            <div class="col-md-12"><div class="mb-3"><input type="email" class="form-control form-control-lg bg-dark text-white border-soft" name="email" placeholder="Email*"></div></div>
-            <div class="col-md-12"><div class="mb-3"><input type="tel" class="form-control form-control-lg bg-dark text-white border-soft" name="phone" placeholder="Phone number*"></div></div>
-            <div class="col-md-12"><div class="mb-3"><textarea class="form-control bg-dark text-white border-soft" name="message" placeholder="Message to us" rows="5"></textarea></div></div>
-            <div class="col-md-12"><button class="btn btn-outline-light" type="submit"><span>Submit Now</span></button></div>
+
+        <!-- Instruksi & Form WA -->
+        <div class="col-lg-7" id="contact-form">
+          <form class="row glass p-3 mb-3 h-100" id="waEnrollForm" autocomplete="on">
+            <div class="col-md-12">
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg bg-dark text-white border-soft" 
+                      name="parent_name" placeholder="Parent's Name*" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <input type="text" class="form-control form-control-lg bg-dark text-white border-soft" 
+                      name="child_name" placeholder="Child's Name*" required>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="mb-3">
+                <input type="text" inputmode="numeric" class="form-control form-control-lg bg-dark text-white border-soft" 
+                      name="child_age" placeholder="Child's Age*" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <input type="tel" class="form-control form-control-lg bg-dark text-white border-soft" 
+                      name="phone" placeholder="Phone Number*" required>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="mb-3">
+                <textarea class="form-control bg-dark text-white border-soft" 
+                          name="inquiry" placeholder="Inquiry (optional)" rows="5"></textarea>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <button class="btn btn-outline-light" type="submit">
+                <span>Send</span>
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -417,11 +674,11 @@
 </main>
 
 <!-- MOBILE BOTTOM NAV -->
-<nav class="mobile_navigation d-xl-none">
-  <div class="position-fixed bottom-0 start-0 end-0 p-2" style="z-index:1180;">
-    <div class="d-flex justify-content-between align-items-center glass px-3 py-2 rounded-2xl">
+<nav class="mobile_navigation d-xl-none" aria-label="Mobile CTA">
+  <div class="position-fixed bottom-0 start-0 end-0 p-2" style="z-index:1180; padding-bottom: calc(env(safe-area-inset-bottom, 0px));">
+    <div class="d-flex justify-content-between align-items-center glass px-3 py-2 rounded-2xl" style="min-height:var(--bottom-bar-h);">
       <button class="btn btn-outline-light btn-sm" id="bottomToggle" aria-controls="mobileMenu" aria-expanded="false">☰ Menu</button>
-      <a href="#/contact" data-route class="btn px-4 fw-bold btn-light border-0 btn-sm" style="background-image: linear-gradient(90deg, #d8ea7b, #4aae66);">Start Free Trial</a>
+      <a href="#" data-wa data-wa-label="Start Free Trial" class="btn px-4 fw-bold btn-light border-0 btn-sm cta-green">Start Free Trial</a>
     </div>
   </div>
 </nav>
@@ -439,10 +696,9 @@
         <ul class="list-unstyled m-0">
           <li><a href="#/about" data-route>Purpose</a></li>
           <li><a href="#/problem-solution" data-route>Problem &amp; Solution</a></li>
-          <li><a href="#/roadmap" data-route>Roadmap</a></li>
+          <li><a href="#/roadmap" data-route data-trans="white">Roadmap</a></li>
           <li><a href="#/deliverables" data-route>Deliverables</a></li>
-          <!-- NEW: Team link -->
-          <li><a href="#/team" data-route>Team</a></li>
+          <li><a href="#/team" data-route data-trans="white">Team</a></li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-6">
@@ -450,15 +706,15 @@
         <ul class="list-unstyled m-0">
           <li><a href="#/parents" data-route>Why Parents Love Us</a></li>
           <li><a href="#/life-after" data-route>Life After AD ASTRA</a></li>
-          <li><a href="#/contact" data-route>Enroll</a></li>
+          <li><a href="#/contact" data-route data-trans="white">Enroll</a></li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="fw-semibold mb-2">Contact</div>
         <ul class="list-unstyled m-0">
-          <li class="muted">Phone: 0811 1333 870</li>
+          <li>Phone: <a href="#" data-wa data-wa-label="Contact us">0811 1333 870</li>
           <li><a href="#">www.adastracoding.com</a></li>
-          <li><a href="#">@adastracoding</a></li>
+          <li><a href="https://www.instagram.com/adastracoding/">@adastracoding</a></li>
         </ul>
       </div>
     </div>
@@ -474,12 +730,60 @@ document.addEventListener('DOMContentLoaded', function(){
   const body = document.body;
   const header = document.getElementById('appHeader');
 
-  /* ====== ELEMENTS needed early (so safe in router) ====== */
+  /* ===== WA config ===== */
+  const WA_PHONE = '628111333870'; // tanpa +, sesuai instruksi
+  function openWhatsApp(message){
+    const url = `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  }
+
+  /* ===== ELEMENTS needed early (so safe in router) ===== */
   const menu = document.getElementById('mobileMenu');
   const closeBtn = document.getElementById('closeMenu');
   const bottomToggle = document.getElementById('bottomToggle');
 
-  /* ====== MENU helpers BEFORE router ====== */
+  /* ===== PAGE TRANSITION overlay ===== */
+  const pageTrans = document.getElementById('pageTrans');
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Jalankan animasi transisi: cover -> swap -> uncover
+  function runPageTransition(color /* 'black' | 'white' */, onMidpoint){
+    // Atur warna overlay
+    if (color === 'white') pageTrans.classList.add('is-white');
+    else pageTrans.classList.remove('is-white');
+
+    // Jika user reduce motion, langsung swap tanpa animasi
+    if (prefersReduced) {
+      onMidpoint?.();
+      return;
+    }
+
+    // Step 1: COVER (scaleY 0 -> 1 dari atas)
+    pageTrans.classList.remove('uncover');
+    void pageTrans.offsetHeight; // reflow reset
+    pageTrans.classList.add('cover');
+
+    const coverDuration = parseFloat(getComputedStyle(pageTrans).transitionDuration) * 1000 || 420;
+
+    // Step 2: di tengah animasi cover selesai -> SWAP CONTENT lalu UN-COVER
+    setTimeout(()=>{
+      onMidpoint?.();
+
+      // ubah origin jadi bottom dan animasikan buka (scaleY 1 -> 0)
+      pageTrans.classList.remove('cover');
+      void pageTrans.offsetHeight;
+      pageTrans.classList.add('uncover');
+
+      // Bersihkan state setelah selesai buka
+      const cleanup = () => {
+        pageTrans.classList.remove('uncover');
+        pageTrans.removeEventListener('transitionend', cleanup);
+      };
+      pageTrans.addEventListener('transitionend', cleanup, { once:true });
+    }, coverDuration);
+  }
+
+  /* ===== MENU helpers BEFORE router ===== */
   function setBottomLabel(open){
     if(!bottomToggle) return;
     bottomToggle.textContent = open ? '✕ Close' : '☰ Menu';
@@ -496,7 +800,7 @@ document.addEventListener('DOMContentLoaded', function(){
     body.style.overflow=''; setBottomLabel(false);
   }
 
-  /* ====== Hide-on-scroll header ====== */
+  /* ===== Hide-on-scroll header ===== */
   let lastY = window.scrollY, hidden=false, ticking=false;
   function onScroll(){
     const y = window.scrollY, down = y > lastY, delta = Math.abs(y-lastY);
@@ -508,7 +812,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   window.addEventListener('scroll', ()=>{ if(!ticking){ requestAnimationFrame(()=>{ onScroll(); ticking=false; }); ticking=true; } }, {passive:true});
 
-  /* ====== Simple Router ====== */
+  /* ===== Simple Router (with anchor support e.g. #/about#raise) ===== */
   const PAGES = [...document.querySelectorAll('[data-page]')].reduce((m,el)=> (m[el.dataset.page]=el,m),{});
   const LINKS = document.querySelectorAll('[data-route]');
 
@@ -523,40 +827,105 @@ document.addEventListener('DOMContentLoaded', function(){
     Object.entries(PAGES).forEach(([k,el])=> el.classList.toggle('active',k===name));
     window.scrollTo({top:0,behavior:'auto'});
     setActiveLink(name);
-    closeMenu(); // now safe
+    closeMenu();
   }
+
+  // Simpan “warna transisi yang diminta” dari klik link terakhir
+  let pendingTransitionColor = null; // 'black' | 'white' | null
+
+  // Parse route + jalankan transisi saat pindah page
+  let firstLoad = true;
   function parseRoute(){
     const hash = location.hash || '#/home';
-    const name = hash.startsWith('#/') ? hash.slice(2).split('#')[0] : 'home';
-    PAGES[name] ? showPage(name) : showPage('home');
+    const slice = hash.startsWith('#/') ? hash.slice(2) : 'home';
+    const parts = slice.split('#');
+    const name = parts[0] || 'home';
+    const anchor = parts[1] || '';
+
+    // kalau pertama kali load: tampilkan tanpa animasi agar cepat
+    if (firstLoad) {
+      firstLoad = false;
+      PAGES[name] ? showPage(name) : showPage('home');
+      if(anchor){
+        setTimeout(()=> document.getElementById(anchor)?.scrollIntoView({behavior:'smooth', block:'start'}), 50);
+      }
+      return;
+    }
+
+    // Warna transisi: pakai pending kalau ada, default 'black'
+    const color = pendingTransitionColor || 'black';
+    pendingTransitionColor = null;
+
+    runPageTransition(color, ()=>{
+      PAGES[name] ? showPage(name) : showPage('home');
+      if(anchor){
+        setTimeout(()=> document.getElementById(anchor)?.scrollIntoView({behavior:'smooth', block:'start'}), 50);
+      }
+    });
   }
   window.addEventListener('hashchange', parseRoute);
   parseRoute();
 
-  /* ====== Bind menu buttons ====== */
+  /* ===== Bind menu buttons ===== */
   bottomToggle?.addEventListener('click', ()=> menu.classList.contains('d-none') ? openMenu() : closeMenu());
   closeBtn?.addEventListener('click', closeMenu);
   menu?.addEventListener('click', (e)=>{ if(e.target===menu) closeMenu(); });
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !menu.classList.contains('d-none')) closeMenu(); });
 
-  /* ====== Delegate route clicks (also close menu) ====== */
+  /* ===== Delegate route clicks =====
+     Tangkap klik ke [data-route], set pendingTransitionColor dari data-trans. */
   document.addEventListener('click', (e)=>{
     const a = e.target.closest('[data-route]');
     if(!a) return;
     const href = a.getAttribute('href')||'';
+    // simpan warna transisi yang diminta link (default hitam)
+    pendingTransitionColor = (a.getAttribute('data-trans') === 'white') ? 'white' : 'black';
     if(href.startsWith('#/')) closeMenu();
   });
 
-  /* ====== Popup video ====== */
+  /* ===== Popup video ===== */
   const popup = document.getElementById('popup');
   const popupVideo = document.getElementById('popupVideo');
   document.getElementById('heroThumb')?.addEventListener('click', ()=>{ popup.classList.remove('d-none'); });
   popup?.addEventListener('click', ()=>{ popupVideo.pause(); popup.classList.add('d-none'); });
 
-  /* ====== FAQ toggles ====== */
+  /* ===== FAQ toggles ===== */
   document.querySelectorAll('.faq .item .q').forEach(q=>{
     q.addEventListener('click', ()=> q.parentElement.classList.toggle('open'));
   });
+
+  /* ====== All buttons with data-wa -> open WhatsApp ====== */
+  document.querySelectorAll('[data-wa]').forEach(btn=>{
+    btn.addEventListener('click', (ev)=>{
+      ev.preventDefault();
+      const label = btn.getAttribute('data-wa-label') || btn.textContent.trim();
+      openWhatsApp(`Hello AD ASTRA! I’d like to ${label}.`);
+    });
+  });
+
+  /* ====== Form submit -> WhatsApp message ====== */
+  const form = document.getElementById('waEnrollForm');
+  form?.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const data = new FormData(form);
+    const parentName = (data.get('parent_name')||'').toString().trim();
+    const childName  = (data.get('child_name')||'').toString().trim();
+    const childAge   = (data.get('child_age')||'').toString().trim();
+    const phone      = (data.get('phone')||'').toString().trim();
+    const inquiry    = (data.get('inquiry')||'').toString().trim();
+
+    const msg = [
+      'AD ASTRA – Enroll / Trial',
+      `Parent's Name: ${parentName}`,
+      `Child's Name: ${childName}`,
+      `Child's Age: ${childAge}`,
+      `Phone Number: ${phone}`,
+      inquiry ? `Inquiry: ${inquiry}` : null
+    ].filter(Boolean).join('\n');
+
+    openWhatsApp(msg);
+  });
+
 });
 </script>
 </body>
