@@ -14,7 +14,7 @@
           </div>
 
           <div class="mt-3 d-flex gap-2 flex-wrap">
-            <a href="#/contact" data-route class="btn btn-outline-light btn-lg m-auto" data-trans="white">🚀 Enroll Now</a>
+            <router-link to="/contact" class="btn btn-outline-light btn-lg m-auto" data-trans="white">🚀 Enroll Now</router-link>
           </div>
           <br><br><br>
 
@@ -28,7 +28,7 @@
                   <li>Ship real projects & portfolios</li>
                   <li>Certification-ready outcomes</li>
                 </ul>
-                <a href="#/about" class="link-learn" data-route>learn more →</a>
+                <router-link to="/about" class="link-learn">learn more →</router-link>
               </article><hr>
               <article class="home-card">
                 <h5 class="mb-1">Deliverables</h5>
@@ -37,7 +37,7 @@
                   <li>Startup POC (pitch & demo)</li>
                   <li>Hands-on AI & Robotics labs</li>
                 </ul>
-                <a href="#/deliverables" class="link-learn" data-route>learn more →</a>
+                <router-link to="/deliverables" class="link-learn">learn more →</router-link>
               </article><hr>
               <article class="home-card">
                 <h5 class="mb-1">Curriculum & Roadmap</h5>
@@ -46,7 +46,7 @@
                   <li>Web, Data/AI, Robotics studios</li>
                   <li>Demo Day & portfolio pathway</li>
                 </ul>
-                <a href="#/roadmap" class="link-learn" data-route data-trans="white">learn more →</a>
+                <router-link to="/roadmap" class="link-learn" data-trans="white">learn more →</router-link>
               </article>
             </div>
           </div>
